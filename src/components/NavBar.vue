@@ -41,11 +41,13 @@ const closeMenu = () => (isMobileMenuOpen.value = false);
             {{ item.name }}
           </a>
           <!-- devfin CTA Button -->
-          <button
-            class="bg-blue-600 hover:bg-blue-500 text-blue-100 px-5 py-2 rounded-full font-bold transition shadow-lg shadow-blue-500/20 text-sm"
+          <a
+            :href="`https://t.me/lenglykoura`"
+            target="_blank"
+            class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2 rounded-full font-bold transition shadow-lg shadow-blue-600/20 text-sm flex items-center gap-2"
           >
             Contact Us
-          </button>
+          </a>
         </div>
 
         <!-- Mobile menu button -->

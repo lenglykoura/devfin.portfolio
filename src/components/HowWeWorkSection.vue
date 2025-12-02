@@ -34,7 +34,7 @@ const steps = [
 <template>
   <section
     id="how-we-works"
-    class="py-24 bg-[#080c16] relative overflow-hidden"
+    class="py-24 bg-[#080c16] relative overflow-hidden border"
   >
     <!-- Decorative Background Elements -->
     <div

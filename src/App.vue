@@ -8,6 +8,8 @@ import ProjectsSection from "./components/ProjectsSection.vue";
 import TeamSection from "./components/TeamSection.vue";
 import FooterSection from "./components/FooterSection.vue";
 import ClientsSection from "./components/ClientsSection.vue"; // Import new component
+import TechStackSection from "./components/TechStackSection.vue";
+import ClientMessageSection from "./components/ClientMessageSection.vue";
 
 // Global Mouse Tracking Logic
 const mouseX = ref(0);
@@ -40,9 +42,11 @@ onUnmounted(() => {
     <HeroSection />
 
     <ServicesSection />
+    <TechStackSection />
     <HowWeWorkSection />
     <ProjectsSection />
     <ClientsSection />
+    <ClientMessageSection />
     <TeamSection />
     <FooterSection />
   </div>

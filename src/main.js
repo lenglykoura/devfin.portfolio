@@ -2,17 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import './style.css' // Ensure this imports your Tailwind directives
 
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faPhone, faUserSecret } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-
-// Add the imported icons to the library
-library.add(faPhone, faUserSecret);
-
 const app = createApp(App);
-
-// Register the Font Awesome component globally
-app.component('font-awesome-icon', FontAwesomeIcon);
 
 // Custom Directive: v-scroll-reveal
 app.directive('scroll-reveal', {

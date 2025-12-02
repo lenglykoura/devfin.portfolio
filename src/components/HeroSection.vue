@@ -55,6 +55,10 @@ onMounted(() => {
         background-size: 30px 30px;
       "
     ></div>
+
+    <div
+      class="hidden lg:block absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-devfin-600/30 to-transparent -translate-y-12 z-0"
+    ></div>
     <!-- Ambient Glows -->
     <div
       class="absolute top-0 right-0 w-[600px] h-[600px] bg-devfin-600/10 rounded-full blur-[120px]"

@@ -1,10 +1,14 @@
 <script setup>
+import { ref } from "vue";
+
 const team = [
   {
     name: "Leng Lykoura",
     role: "Full Stack Web Developer",
     desc: "Full-stack wizard specializing in Vue and Laravel architectures.",
     image: "lenglykoura.jpg",
+    telegram: "lenglykoura",
+    github: "lenglykoura",
     delay: 0,
   },
   // {
@@ -39,20 +43,31 @@ const getImageUrl = (name) => {
     return "[https://via.placeholder.com/150](https://via.placeholder.com/150)"; // Fallback
   }
 };
+
+// State to track which card is active (clicked) on mobile
+const activeIndex = ref(null);
+
+const toggleCard = (index) => {
+  if (activeIndex.value === index) {
+    activeIndex.value = null;
+  } else {
+    activeIndex.value = index;
+  }
+};
 </script>
 
 <template>
-  <section id="team" class="py-24 bg-[#020617] relative overflow-hidden">
+  <section id="team" class="py-24 bg-[#020617] relative overflow-hidden border">
     <!-- Background Decoration -->
     <div
       class="absolute inset-0 z-0 opacity-20"
       style="
-        background-image: radial-gradient(#10b981 1px, transparent 1px);
+        background-image: radial-gradient(#123764 1px, transparent 1px);
         background-size: 30px 30px;
       "
     ></div>
     <div
-      class="absolute right-0 top-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-devfin-500/5 blur-[100px]"
+      class="absolute right-0 top-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-devfin-600/5 blur-[100px]"
     ></div>
     <div
       class="absolute left-0 bottom-0 -ml-20 -mb-20 w-96 h-96 rounded-full bg-blue-500/5 blur-[100px]"
@@ -85,12 +100,14 @@ const getImageUrl = (name) => {
           v-scroll-reveal="member.delay"
           class="group relative w-full sm:w-80 lg:w-72 transition-all duration-700 ease-out"
         >
+          <!-- Added @click to toggle state -->
           <div
-            class="relative bg-slate-900 p-6 rounded-3xl shadow-xl shadow-black/30 border border-slate-800 transition-all duration-300 hover:-translate-y-2 hover:shadow-devfin-900/10 hover:border-slate-700 h-full flex flex-col items-center"
+            @click="toggleCard(index)"
+            class="relative bg-slate-900 p-6 rounded-3xl shadow-xl shadow-black/30 border border-slate-800 transition-all duration-300 hover:-translate-y-2 hover:shadow-devfin-600/10 hover:border-slate-700 h-full flex flex-col items-center cursor-pointer"
           >
             <!-- Image Container -->
             <div
-              class="relative w-40 h-40 mx-auto rounded-full overflow-hidden mb-6 border-4 border-slate-800 shadow-lg group-hover:border-devfin-500/30 transition-colors duration-300"
+              class="relative w-40 h-40 mx-auto rounded-full overflow-hidden mb-6 border-4 border-slate-800 shadow-lg group-hover:border-devfin-600/30 transition-colors duration-300"
             >
               <img
                 :src="getImageUrl(member.image)"
@@ -101,13 +118,11 @@ const getImageUrl = (name) => {
 
             <!-- Content -->
             <div class="text-center">
-              <h3
-                class="text-xl font-bold text-white mb-1 group-hover:text-blue-400 transition-colors uppercase"
-              >
+              <h3 class="text-xl font-bold text-white mb-1 transition-colors">
                 {{ member.name }}
               </h3>
               <p
-                class="text-sm font-semibold text-white group-hover:text-blue-300 uppercase tracking-wide mb-4"
+                class="text-sm font-semibold text-devfin-100 uppercase tracking-wide mb-4"
               >
                 {{ member.role }}
               </p>
@@ -116,17 +131,25 @@ const getImageUrl = (name) => {
               </p>
 
               <!-- Social Links Mockup -->
+              <!-- Classes are conditional based on activeIndex OR group-hover -->
               <div
-                class="flex justify-center space-x-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0"
+                class="flex justify-center space-x-4 transition-all duration-300 transform"
+                :class="
+                  activeIndex === index
+                    ? 'opacity-100 translate-y-0'
+                    : 'opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0'
+                "
               >
                 <a
-                  href="#"
-                  class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-devfin-500 hover:text-white transition-colors"
-                  ><i class="fab fa-linkedin-in text-sm"></i
+                  :href="`https://t.me/${member.telegram}`"
+                  target="_blank"
+                  class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-devfin-600 hover:text-white transition-colors"
+                  ><i class="fab fa-telegram text-sm"></i
                 ></a>
                 <a
-                  href="#"
-                  class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-devfin-500 hover:text-white transition-colors"
+                  :href="`https://github.com/${member.github}`"
+                  target="_blank"
+                  class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-devfin-600 hover:text-white transition-colors"
                   ><i class="fab fa-github text-sm"></i
                 ></a>
               </div>
