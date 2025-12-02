@@ -75,12 +75,16 @@
           >
             <i class="fab fa-facebook"></i>
           </a>
+          <a
+            href="#"
+            class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-devfin-500 hover:text-white transition-all duration-300 hover:-translate-y-1"
+          >
+            <i class="fab fa-google"></i>
+          </a>
         </div>
-        <p
-          class="text-sm font-medium text-white transition-colors"
-        >
+        <!-- <a href="#" class="hover:text-blue-400 transition-colors duration-300">
           info@devfin.cc
-        </p>
+        </a> -->
       </div>
     </div>
 
