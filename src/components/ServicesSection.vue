@@ -29,7 +29,7 @@ const services = [
 
 <template>
   <!-- Dark Theme Services Section -->
-  <section id="services" class="py-24 bg-[#0b1120] relative overflow-hidden border">
+  <section id="services" class="py-24 bg-[#0b1120] relative overflow-hidden border-t">
     <!-- Decorative Background Glows -->
     <div
       class="absolute top-0 left-0 -ml-20 -mt-20 w-96 h-96 rounded-full bg-devfin-600/10 blur-[100px]"

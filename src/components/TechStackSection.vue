@@ -14,7 +14,7 @@ const tools = [
 <template>
   <section
     id="tech-stack"
-    class="py-24 bg-[#050a14] relative overflow-hidden flex items-center justify-center"
+    class="py-24 bg-[#050a14] relative overflow-hidden flex items-center justify-center border-t"
   >
     <div
       class="absolute inset-0 z-0 opacity-20"

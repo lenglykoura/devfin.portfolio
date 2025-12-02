@@ -54,7 +54,7 @@ const projects = [
 <template>
   <section
     id="projects"
-    class="pt-32 pb-20 overflow-hidden bg-[#020617] text-white "
+   class="py-24 bg-[#080c16] relative overflow-hidden border-t"
   >
     <!-- Background Decoration -->
     <div

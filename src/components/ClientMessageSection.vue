@@ -4,7 +4,7 @@
 
 <template>
   <section
-    class="py-24 bg-[#020617] relative overflow-hidden flex items-center border"
+    class="py-24 bg-[#020617] relative overflow-hidden flex items-center"
   >
     <!-- Background Decor -->
     <div
