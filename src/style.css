@@ -1,0 +1,21 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+.tech-badge {
+  transition: all 0.2s ease;
+}
+.tech-badge:hover {
+  transform: translateY(-2px);
+}
+
+/* Scroll Reveal Animation Classes */
+.reveal-hidden {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}

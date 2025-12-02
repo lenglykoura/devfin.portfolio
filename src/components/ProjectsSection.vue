@@ -1,0 +1,110 @@
+<script setup>
+const projects = [
+  {
+      title: 'Loan Management System',
+      status: 'Live',
+      statusClass: 'bg-devfin-500/10 text-blue-100 border-devfin-500/20',
+      description: 'A comprehensive dashboard for financial institutions to manage borrower profiles, automate interest calculations, and track repayment schedules.',
+      icon: 'fa-hand-holding-dollar',
+      gradient: 'bg-gradient-to-br from-slate-800 to-slate-900',
+      techStack: [
+          { name: 'Vue.js', class: 'bg-devfin-500/10 text-blue-200 border-devfin-500/20' },
+          { name: 'Laravel', class: 'bg-red-500/10 text-red-400 border-red-500/20' },
+          { name: 'MySQL', class: 'bg-orange-500/10 text-orange-400 border-orange-500/20' },
+      ],
+      delay: 0
+  },
+  {
+      title: 'POS Management System',
+      status: 'Enterprise',
+      statusClass: 'bg-blue-500/10 text-blue-400 border-blue-500/20',
+      description: 'A high-performance Point of Sale solution for retail chains. Features inventory tracking, barcode scanning integration, and real-time sales analytics.',
+      icon: 'fa-cash-register',
+      gradient: 'bg-gradient-to-br from-indigo-900 to-slate-900',
+      techStack: [
+          { name: '.NET Core', class: 'bg-purple-500/10 text-purple-400 border-purple-500/20' },
+          { name: 'C#', class: 'bg-indigo-500/10 text-indigo-400 border-indigo-500/20' },
+          { name: 'SQL Server', class: 'bg-slate-700/50 text-slate-300 border-slate-600/50' },
+      ],
+      delay: 200
+  }
+]
+</script>
+
+<template>
+  <section id="projects" class="py-24 bg-[#0b1120] relative overflow-hidden">
+    <!-- Background Decoration -->
+    <div class="absolute inset-0 z-0 opacity-20" 
+         style="background-image: radial-gradient(#1e293b 1px, transparent 1px); background-size: 30px 30px;">
+    </div>
+    
+    <!-- Ambient Glows -->
+    <div class="absolute top-1/4 right-0 w-[500px] h-[500px] bg-devfin-500/5 rounded-full blur-[120px]"></div>
+    <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[120px]"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center mb-20" v-scroll-reveal>
+          <span class="text-xs font-bold tracking-wider text-blue-100 uppercase bg-blue-500/10 border border-blue-500/20 px-4 py-1.5 rounded-full mb-4 inline-block">
+            Our Work
+          </span>
+          <h2 class="mt-2 text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+              Featured Projects
+          </h2>
+          <p class="mt-6 max-w-2xl text-xl text-slate-400 mx-auto leading-relaxed">
+              Showcasing our expertise in delivering high-impact technical solutions.
+          </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div v-for="(project, index) in projects" :key="index"
+                v-scroll-reveal="project.delay"
+                class="group flex flex-col bg-slate-900 rounded-3xl overflow-hidden shadow-xl shadow-black/30 border border-slate-800 hover:border-slate-700 transition-all duration-500 hover:-translate-y-2">
+              
+              <!-- Image/Icon Area -->
+              <div class="h-52 relative overflow-hidden bg-slate-800/50">
+                  <div class="absolute inset-0 flex items-center justify-center text-white transition-transform duration-700 group-hover:scale-105" :class="project.gradient">
+                        <i class="fas text-6xl opacity-80 drop-shadow-lg transform transition-transform duration-500 group-hover:rotate-12 group-hover:scale-110" :class="project.icon"></i>
+                        
+                        <!-- Overlay on hover -->
+                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+                  
+                  <!-- Status Badge -->
+                  <div class="absolute top-6 right-6">
+                      <span class="px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-sm border backdrop-blur-md" 
+                            :class="project.statusClass">
+                        {{ project.status }}
+                      </span>
+                  </div>
+              </div>
+
+              <!-- Content Area -->
+              <div class="p-8 flex-1 flex flex-col">
+                  <div class="mb-4">
+                      <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors uppercase">
+                        {{ project.title }}
+                      </h3>
+                      <p class="text-slate-400 leading-relaxed text-sm">
+                        {{ project.description }}
+                      </p>
+                  </div>
+
+                  <div class="mt-auto pt-6 border-t border-slate-800">
+                      <div class="flex items-center justify-between mb-4">
+                        <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider">Technologies</h4>
+                      </div>
+                      
+                      <div class="flex flex-wrap gap-2">
+                          <span v-for="tech in project.techStack" :key="tech.name"
+                                class="px-3 py-1.5 rounded-lg text-xs font-bold border transition-transform hover:scale-105 cursor-default"
+                                :class="tech.class">
+                              {{ tech.name }}
+                          </span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </section>
+</template>
