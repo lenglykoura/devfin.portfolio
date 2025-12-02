@@ -57,7 +57,7 @@ const toggleCard = (index) => {
 </script>
 
 <template>
-  <section id="team" class="py-24 bg-[#020617] relative overflow-hidden border">
+  <section id="team" class="py-24 bg-[#020617] relative overflow-hidden">
     <!-- Background Decoration -->
     <div
       class="absolute inset-0 z-0 opacity-20"
