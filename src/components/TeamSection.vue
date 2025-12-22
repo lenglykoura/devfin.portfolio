@@ -67,7 +67,10 @@ const toggleCard = (index) => {
 </script>
 
 <template>
-  <section id="team" class="py-24 bg-[#020617] relative overflow-hidden border-t">
+  <section
+    id="team"
+    class="py-24 bg-[#020617] relative overflow-hidden border-t"
+  >
     <!-- Background Decoration -->
     <div
       class="absolute inset-0 z-0 opacity-20"
@@ -77,7 +80,7 @@ const toggleCard = (index) => {
       "
     ></div>
     <div
-      class="absolute right-0 top-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-devfin-600/5 blur-[100px]"
+      class="absolute right-0 top-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-blue-600/5 blur-[100px]"
     ></div>
     <div
       class="absolute left-0 bottom-0 -ml-20 -mb-20 w-96 h-96 rounded-full bg-blue-500/5 blur-[100px]"
@@ -113,11 +116,11 @@ const toggleCard = (index) => {
           <!-- Added @click to toggle state -->
           <div
             @click="toggleCard(index)"
-            class="relative bg-slate-900 p-6 rounded-3xl shadow-xl shadow-black/30 border border-slate-800 transition-all duration-300 hover:-translate-y-2 hover:shadow-devfin-600/10 hover:border-slate-700 h-full flex flex-col items-center cursor-pointer"
+            class="relative bg-slate-900 p-6 rounded-3xl shadow-xl shadow-black/30 border border-slate-800 transition-all duration-300 hover:-translate-y-2 hover:shadow-blue-600/10 hover:border-slate-700 h-full flex flex-col items-center cursor-pointer"
           >
             <!-- Image Container -->
             <div
-              class="relative w-40 h-40 mx-auto rounded-full overflow-hidden mb-6 border-4 border-slate-800 shadow-lg group-hover:border-devfin-600/30 transition-colors duration-300 ring-1 ring-slate-100"
+              class="relative w-40 h-40 mx-auto rounded-full overflow-hidden mb-6 border-slate-800 shadow-lg group-hover:border-blue-600/30 transition-colors duration-300 ring-3 ring-slate-100"
             >
               <img
                 :src="getImageUrl(member.image)"
@@ -132,7 +135,7 @@ const toggleCard = (index) => {
                 {{ member.name }}
               </h3>
               <p
-                class="text-sm font-semibold text-devfin-100 uppercase tracking-wide mb-4"
+                class="text-sm font-semibold text-blue-100 uppercase tracking-wide mb-4"
               >
                 {{ member.role }}
               </p>
@@ -153,7 +156,7 @@ const toggleCard = (index) => {
                 <a
                   :href="`https://t.me/${member.telegram}`"
                   target="_blank"
-                  class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-devfin-600 hover:text-white transition-colors"
+                  class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white transition-colors"
                 >
                   <i class="fab fa-telegram text-sm"></i>
                 </a>
@@ -161,7 +164,7 @@ const toggleCard = (index) => {
                 <a
                   :href="`https://github.com/${member.github}`"
                   target="_blank"
-                  class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-devfin-600 hover:text-white transition-colors"
+                  class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white transition-colors"
                 >
                   <i class="fab fa-github text-sm"></i>
                 </a>
