@@ -1,5 +1,7 @@
 <script setup>
-// No script logic needed for CSS-only animations
+import { useI18n } from "vue-i18n";
+
+const { t } = useI18n();
 </script>
 
 <template>
@@ -22,34 +24,32 @@
           <span
             class="text-xs font-bold tracking-wider text-blue-100 uppercase bg-blue-500/10 border border-blue-500/20 px-4 py-1.5 rounded-full mb-4 inline-block"
           >
-            Real-Time Updates
+            {{ t("clientMessages.badge") }}
           </span>
           <h2
             class="text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-6 leading-tight"
           >
-            We don't just deliver,<br />
-            we set new
+            {{ t("clientMessages.title.line1") }}<br />
+            {{ t("clientMessages.title.line2") }}
             <span
               class="text-transparent bg-clip-text bg-gradient-to-r from-devfin-500 to-blue-400"
-              >Standards.</span
+              >{{ t("clientMessages.title.highlight") }}</span
             >
           </h2>
 
           <p class="text-lg text-slate-400 mb-8 leading-relaxed max-w-lg">
-            Our expectations for results are demanding—and thanks to our
-            streamlined process, we deliver with precision and speed.
+            {{ t("clientMessages.desc") }}
           </p>
 
           <a
             href="#how-it-works"
             class="inline-block px-8 py-3 rounded-lg border border-slate-700 text-white font-medium hover:bg-slate-800 hover:border-devfin-500 transition-all duration-300"
           >
-            View Process
+            {{ t("clientMessages.btn") }}
           </a>
         </div>
 
         <!-- Right Animation (Floating Notifications) -->
-        <!-- Fixed height container for absolute positioning -->
         <div
           class="relative h-[400px] flex items-center justify-center lg:justify-end perspective-1000 w-full"
         >
@@ -64,11 +64,15 @@
             </div>
             <div class="flex-1 min-w-0">
               <div class="flex justify-between items-baseline mb-1">
-                <h4 class="font-bold text-white text-sm">Devfin Team</h4>
-                <span class="text-xs text-slate-500">Just now</span>
+                <h4 class="font-bold text-white text-sm">
+                  {{ t("clientMessages.notifications.deploy.title") }}
+                </h4>
+                <span class="text-xs text-slate-500">{{
+                  t("clientMessages.notifications.deploy.time")
+                }}</span>
               </div>
               <p class="text-slate-400 text-sm truncate">
-                Deployment successful! System is live. 🚀
+                {{ t("clientMessages.notifications.deploy.msg") }}
               </p>
             </div>
           </div>
@@ -84,11 +88,15 @@
             </div>
             <div class="flex-1 min-w-0">
               <div class="flex justify-between items-baseline mb-1">
-                <h4 class="font-bold text-white text-sm">System Update</h4>
-                <span class="text-xs text-slate-500">2m ago</span>
+                <h4 class="font-bold text-white text-sm">
+                  {{ t("clientMessages.notifications.update.title") }}
+                </h4>
+                <span class="text-xs text-slate-500">{{
+                  t("clientMessages.notifications.update.time")
+                }}</span>
               </div>
               <p class="text-slate-400 text-sm truncate">
-                Optimization complete. Speed up by 40%.
+                {{ t("clientMessages.notifications.update.msg") }}
               </p>
             </div>
           </div>
@@ -104,11 +112,15 @@
             </div>
             <div class="flex-1 min-w-0">
               <div class="flex justify-between items-baseline mb-1">
-                <h4 class="font-bold text-white text-sm">Analytics</h4>
-                <span class="text-xs text-slate-500">5m ago</span>
+                <h4 class="font-bold text-white text-sm">
+                  {{ t("clientMessages.notifications.analytics.title") }}
+                </h4>
+                <span class="text-xs text-slate-500">{{
+                  t("clientMessages.notifications.analytics.time")
+                }}</span>
               </div>
               <p class="text-slate-400 text-sm truncate">
-                Monthly active users hit 10k! 🎉
+                {{ t("clientMessages.notifications.analytics.msg") }}
               </p>
             </div>
           </div>
@@ -124,11 +136,15 @@
             </div>
             <div class="flex-1 min-w-0">
               <div class="flex justify-between items-baseline mb-1">
-                <h4 class="font-bold text-white text-sm">New Subscriber</h4>
-                <span class="text-xs text-slate-500">10m ago</span>
+                <h4 class="font-bold text-white text-sm">
+                  {{ t("clientMessages.notifications.user.title") }}
+                </h4>
+                <span class="text-xs text-slate-500">{{
+                  t("clientMessages.notifications.user.time")
+                }}</span>
               </div>
               <p class="text-slate-400 text-sm truncate">
-                User #8492 subscribed to Pro Plan.
+                {{ t("clientMessages.notifications.user.msg") }}
               </p>
             </div>
           </div>
@@ -139,12 +155,6 @@
 </template>
 
 <style scoped>
-/* Stacking Cycle Animation (16s total)
-  0-25%: Front (Active)
-  25-50%: Back 1 (Visible behind)
-  50-75%: Back 2 (Visible further behind)
-  75-100%: Fade out/Reset
-*/
 @keyframes stack-cycle {
   /* Phase 1: Enter & Active (Front) */
   0% {
@@ -200,7 +210,6 @@
   }
 }
 
-/* Staggered Animations (16s total = 4 items * 4s each) */
 .animate-cycle-1 {
   animation: stack-cycle 16s ease-in-out infinite 0s;
   opacity: 0;

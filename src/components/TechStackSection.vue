@@ -1,21 +1,26 @@
 <script setup>
+import { useI18n } from "vue-i18n";
+
+const { t } = useI18n();
+
 const tools = [
-  { name: "Vue.js", icon: "fa-vuejs", color: "#42b883", angle: 0 },
-  { name: "Laravel", icon: "fa-laravel", color: "#F05340", angle: 135 },
-  { name: "PHP", icon: "fa-php", color: "#474A8A", angle: 180 },
-  { name: ".NET", icon: "fa-windows", color: "#512BD4", angle: 225 },
-  { name: "Docker", icon: "fa-docker", color: "#2496ED", angle: 90 },
-  { name: "MySQL", icon: "fas fa-database", color: "#4479A1", angle: 45 },
-  { name: "Java Script", icon: "fa-square-js", color: "#F0DB4F", angle: 270 },
-  { name: "Node.js", icon: "fa-node-js", color: "#339933", angle: 315 },
+  { name: "Vue.js", icon: "fab fa-vuejs", color: "#42b883", angle: 0 },
+  { name: "Laravel", icon: "fab fa-laravel", color: "#F05340", angle: 45 },
+  { name: "Docker", icon: "fab fa-docker", color: "#2496ED", angle: 90 },
+  { name: "MySQL", icon: "fas fa-database", color: "#4479A1", angle: 135 }, // Uses 'fas' (Solid)
+  { name: "PHP", icon: "fab fa-php", color: "#777BB4", angle: 180 },
+  { name: ".NET", icon: "fab fa-windows", color: "#512BD4", angle: 225 },
+  { name: "JavaScript", icon: "fab fa-js", color: "#F0DB4F", angle: 270 },
+  { name: "Node.js", icon: "fab fa-node-js", color: "#339933", angle: 315 },
 ];
 </script>
 
 <template>
   <section
     id="tech-stack"
-    class="py-24 bg-[#050a14] relative overflow-hidden flex items-center justify-center border-t"
+    class="py-24 bg-[#050a14] relative overflow-hidden flex items-center justify-center"
   >
+    <!-- Background Decor -->
     <div
       class="absolute inset-0 z-0 opacity-20"
       style="
@@ -23,7 +28,6 @@ const tools = [
         background-size: 30px 30px;
       "
     ></div>
-    <!-- Background Decor -->
     <div
       class="absolute inset-0 z-0 bg-radial-gradient from-devfin-900/20 to-transparent"
     ></div>
@@ -33,16 +37,15 @@ const tools = [
         <span
           class="text-xs font-bold tracking-wider text-blue-100 uppercase bg-blue-500/10 border border-blue-500/20 px-4 py-1.5 rounded-full mb-4 inline-block"
         >
-          Tech Stack
+          {{ t("techStack.badge") }}
         </span>
         <h2
           class="text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-4"
         >
-          Tools We Use
+          {{ t("techStack.title") }}
         </h2>
         <p class="text-slate-400 max-w-xl mx-auto">
-          We leverage the best modern technologies to build robust, scalable,
-          and high-performance solutions.
+          {{ t("techStack.subtitle") }}
         </p>
       </div>
 
@@ -87,24 +90,18 @@ const tools = [
 
         <!-- Center Logo -->
         <div
-          class="absolute z-10 w-16 h-16 md:w-20 md:h-20 bg-slate-900 border border-slate-700 rounded-2xl flex items-center justify-center shadow-[0_0_50px_rgba(18,55,100,0.3)] animate-float"
+          class="absolute z-20 w-24 h-24 md:w-32 md:h-32 bg-slate-900 border border-slate-700 rounded-2xl flex items-center justify-center shadow-[0_0_50px_rgba(18,55,100,0.3)] animate-float"
         >
-          <div class="text-center">
-            <!-- <div
-              class="w-10 h-10 md:w-12 md:h-12 mx-auto flex items-center justify-center text-white font-bold text-xl md:text-2xl shadow-lg"
-            >
-              <img
-                src="/src/assets/images/logo-white.png"
-                alt=""
-                width="34px"
-              />
-            </div>
+          <div class="text-center flex flex-col items-center justify-center">
+            <img
+              src="/src/assets/images/logo-white.png"
+              alt="Devfin"
+              class="w-10 md:w-14 mb-1"
+            />
             <span
               class="text-[10px] md:text-xs font-bold text-slate-300 tracking-wider"
-              >DEVFIN.</span
-            > -->
-
-            <i class="fa-solid fa-code text-3xl" style="color: white"></i>
+              >DEVFIN</span
+            >
           </div>
         </div>
 
@@ -117,8 +114,9 @@ const tools = [
             50 + 40 * Math.cos((tool.angle * Math.PI) / 180)
           }%; top: ${50 + 40 * Math.sin((tool.angle * Math.PI) / 180)}%;`"
         >
+          <!-- Note: 'fab' or 'fas' is now included in tool.icon data -->
           <i
-            class="fab text-xl md:text-3xl transition-colors duration-300"
+            class="text-xl md:text-3xl transition-colors duration-300"
             :class="tool.icon"
             :style="`color: ${tool.color}`"
           ></i>

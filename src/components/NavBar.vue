@@ -1,16 +1,24 @@
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
+import { useI18n } from "vue-i18n";
 
+const { locale, t } = useI18n();
 const isMobileMenuOpen = ref(false);
-const menuItems = [
-  { name: "Home", href: "#home" },
-  { name: "Services", href: "#services" },
-  { name: "Projects", href: "#projects" },
-  { name: "Team", href: "#team" },
-];
+
+// Use computed to make menu items reactive to language changes
+const menuItems = computed(() => [
+  { name: t("nav.home"), href: "#home" },
+  { name: t("nav.work"), href: "#projects" },
+  { name: t("nav.pricing"), href: "#pricing" },
+  { name: t("nav.team"), href: "#team" },
+]);
 
 const toggleMenu = () => (isMobileMenuOpen.value = !isMobileMenuOpen.value);
 const closeMenu = () => (isMobileMenuOpen.value = false);
+
+const switchLang = () => {
+  locale.value = locale.value === "en" ? "km" : "en";
+};
 </script>
 
 <template>
@@ -28,6 +36,7 @@ const closeMenu = () => (isMobileMenuOpen.value = false);
           >
         </div>
 
+        <!-- Desktop Menu -->
         <div class="hidden md:flex space-x-8 items-center">
           <a
             v-for="item in menuItems"
@@ -38,20 +47,37 @@ const closeMenu = () => (isMobileMenuOpen.value = false);
             {{ item.name }}
           </a>
         </div>
-        <!-- Desktop Menu -->
+
+        <!-- Right Side Actions -->
         <div class="hidden md:flex space-x-8 items-center">
-          <!-- devfin CTA Button -->
+          <!-- Language Switcher -->
+          <button
+            @click="switchLang"
+            class="text-slate-300 hover:text-white font-bold text-xs uppercase border border-slate-700 rounded px-2 py-1 transition"
+          >
+            {{ locale === "en" ? "EN" : "KM" }}
+          </button>
+
+          <!-- Contact Button -->
           <a
             :href="`https://t.me/lenglykoura`"
             target="_blank"
             class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2 rounded-full font-bold transition shadow-lg shadow-blue-600/20 text-sm flex items-center gap-2"
           >
-            Contact Us
+            {{ t("nav.contact") }}
           </a>
         </div>
 
         <!-- Mobile menu button -->
-        <div class="md:hidden flex items-center">
+        <div class="md:hidden flex items-center gap-4">
+          <!-- Mobile Language Switcher -->
+          <button
+            @click="switchLang"
+            class="text-slate-300 hover:text-white font-bold text-xs uppercase border border-slate-700 rounded px-2 py-1 transition"
+          >
+            {{ locale === "en" ? "EN" : "KM" }}
+          </button>
+
           <button
             @click="toggleMenu"
             class="text-slate-300 hover:text-white focus:outline-none"

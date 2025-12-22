@@ -1,10 +1,15 @@
 <script setup>
-const projects = [
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
+
+const projects = computed(() => [
   {
-      title: 'Loan Management',
-      status: 'Live',
+      title: t('projects.items.loan.title'),
+      status: t('projects.items.loan.status'),
       statusClass: 'bg-devfin-500/10 text-blue-100 border-devfin-500/20',
-      description: 'A comprehensive dashboard for financial institutions to manage borrower profiles, automate interest calculations, and track repayment schedules.',
+      description: t('projects.items.loan.desc'),
       icon: 'fa-hand-holding-dollar',
       gradient: 'bg-gradient-to-br from-slate-800 to-slate-900',
       techStack: [
@@ -15,10 +20,10 @@ const projects = [
       delay: 0
   },
   {
-    title: "Hotel Management",
-    status: "Live",
+    title: t('projects.items.hotel.title'),
+    status: t('projects.items.hotel.status'),
     statusClass: "bg-blue-500/10 text-blue-400 border-blue-500/20",
-    description: "A comprehensive hotel management solution featuring room booking, guest management, billing, and real-time occupancy tracking.",
+    description: t('projects.items.hotel.desc'),
     icon: "fa-hotel", 
     gradient: "bg-gradient-to-br from-indigo-900 to-slate-900",
     techStack: [
@@ -38,10 +43,10 @@ const projects = [
     delay: 200,
   },
   {
-    title: "POS Management",
-    status: "Enterprise",
+    title: t('projects.items.pos.title'),
+    status: t('projects.items.pos.status'),
     statusClass: "bg-purple-500/10 text-purple-400 border-purple-500/20",
-    description: "A high-performance Point of Sale solution for retail chains. Features inventory tracking, barcode scanning integration, and real-time sales analytics.",
+    description: t('projects.items.pos.desc'),
     icon: "fa-cash-register",
     gradient: "bg-gradient-to-br from-indigo-900 to-slate-900",
     techStack: [
@@ -60,7 +65,7 @@ const projects = [
     ],
     delay: 400,
   }
-]
+])
 </script>
 
 <template>
@@ -77,13 +82,13 @@ const projects = [
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="text-center mb-20" v-scroll-reveal>
           <span class="text-xs font-bold tracking-wider text-blue-100 uppercase bg-blue-500/10 border border-blue-500/20 px-4 py-1.5 rounded-full mb-4 inline-block">
-            Our Work
+            {{ t('projects.badge') }}
           </span>
           <h2 class="mt-2 text-4xl md:text-5xl font-extrabold text-white tracking-tight">
-              Featured Projects
+              {{ t('projects.title') }}
           </h2>
           <p class="mt-6 max-w-2xl text-xl text-slate-400 mx-auto leading-relaxed">
-              Showcasing our expertise in delivering high-impact technical solutions.
+              {{ t('projects.subtitle') }}
           </p>
       </div>
 
@@ -124,7 +129,7 @@ const projects = [
 
                   <div class="mt-auto pt-6 border-t border-slate-800">
                       <div class="flex items-center justify-between mb-4">
-                        <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider">Technologies</h4>
+                        <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider">{{ t('projects.technologies') }}</h4>
                       </div>
                       
                       <div class="flex flex-wrap gap-2">

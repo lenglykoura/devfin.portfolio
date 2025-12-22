@@ -1,38 +1,48 @@
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
+import { useI18n } from "vue-i18n";
 
-const team = [
+const { t } = useI18n();
+
+// Use computed property for team data to react to language changes
+const team = computed(() => [
   {
-    name: "Leng Lykoura",
-    role: "Full Stack Web Developer",
-    desc: "Full-stack wizard specializing in Vue and Laravel architectures.",
+    name: t("team.members.leng.name"),
+    role: t("team.members.leng.role"),
+    desc: t("team.members.leng.desc"),
     image: "lenglykoura.jpg",
     telegram: "lenglykoura",
     github: "lenglykoura",
     delay: 0,
   },
   // {
-  //   name: "Sarah Chen",
-  //   role: "System Architect",
-  //   desc: "Expert in .NET ecosystems and cloud server management.",
-  //   image: "sarahchen.jpg", // Ensure you have this image or use a placeholder
+  //   name: t('team.members.sarah.name'),
+  //   role: t('team.members.sarah.role'),
+  //   desc: t('team.members.sarah.desc'),
+  //   image: "sarahchen.jpg",
+  //   telegram: "sarahchen",
+  //   github: "sarahchen",
   //   delay: 100,
   // },
   // {
-  //   name: "David Ross",
-  //   role: "Mobile Lead",
-  //   desc: "Specializes in high-performance native iOS and Android apps.",
-  //   image: "davidross.jpg", // Ensure you have this image or use a placeholder
+  //   name: t('team.members.david.name'),
+  //   role: t('team.members.david.role'),
+  //   desc: t('team.members.david.desc'),
+  //   image: "davidross.jpg",
+  //   telegram: "davidross",
+  //   github: "davidross",
   //   delay: 200,
   // },
   // {
-  //   name: "Emily Blunt",
-  //   role: "Project Manager",
-  //   desc: "Ensures agile delivery and seamless client communication.",
-  //   image: "emilyblunt.jpg", // Ensure you have this image or use a placeholder
+  //   name: t('team.members.emily.name'),
+  //   role: t('team.members.emily.role'),
+  //   desc: t('team.members.emily.desc'),
+  //   image: "emilyblunt.jpg",
+  //   telegram: "emilyblunt",
+  //   github: "emilyblunt",
   //   delay: 300,
   // },
-];
+]);
 
 // Helper function to dynamically load images from src/assets/images/
 const getImageUrl = (name) => {
@@ -40,7 +50,7 @@ const getImageUrl = (name) => {
   try {
     return new URL(`../assets/images/${name}`, import.meta.url).href;
   } catch (e) {
-    return "[https://via.placeholder.com/150](https://via.placeholder.com/150)"; // Fallback
+    return "https://via.placeholder.com/150"; // Fallback
   }
 };
 
@@ -78,17 +88,17 @@ const toggleCard = (index) => {
         <span
           class="text-xs font-bold tracking-wider text-blue-100 uppercase bg-blue-500/10 border border-blue-500/20 px-4 py-1.5 rounded-full mb-4 inline-block"
         >
-          Our People
+          {{ t("team.badge") }}
         </span>
         <h2
           class="mt-2 text-4xl md:text-5xl font-extrabold text-white tracking-tight"
         >
-          Meet The Team
+          {{ t("team.title") }}
         </h2>
         <p
           class="mt-6 max-w-2xl text-xl text-slate-400 mx-auto leading-relaxed"
         >
-          Experts committed to technical excellence and innovation.
+          {{ t("team.subtitle") }}
         </p>
       </div>
 
@@ -107,7 +117,7 @@ const toggleCard = (index) => {
           >
             <!-- Image Container -->
             <div
-              class="relative w-40 h-40 mx-auto rounded-full overflow-hidden mb-6 border-4 border-slate-800 shadow-lg group-hover:border-devfin-600/30 transition-colors duration-300"
+              class="relative w-40 h-40 mx-auto rounded-full overflow-hidden mb-6 border-4 border-slate-800 shadow-lg group-hover:border-devfin-600/30 transition-colors duration-300 ring-1 ring-slate-100"
             >
               <img
                 :src="getImageUrl(member.image)"
@@ -131,7 +141,6 @@ const toggleCard = (index) => {
               </p>
 
               <!-- Social Links Mockup -->
-              <!-- Classes are conditional based on activeIndex OR group-hover -->
               <div
                 class="flex justify-center space-x-4 transition-all duration-300 transform"
                 :class="
@@ -140,18 +149,22 @@ const toggleCard = (index) => {
                     : 'opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0'
                 "
               >
+                <!-- FIXED LINKS HERE -->
                 <a
                   :href="`https://t.me/${member.telegram}`"
                   target="_blank"
                   class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-devfin-600 hover:text-white transition-colors"
-                  ><i class="fab fa-telegram text-sm"></i
-                ></a>
+                >
+                  <i class="fab fa-telegram text-sm"></i>
+                </a>
+
                 <a
                   :href="`https://github.com/${member.github}`"
                   target="_blank"
                   class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-devfin-600 hover:text-white transition-colors"
-                  ><i class="fab fa-github text-sm"></i
-                ></a>
+                >
+                  <i class="fab fa-github text-sm"></i>
+                </a>
               </div>
             </div>
           </div>
