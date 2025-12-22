@@ -5,9 +5,7 @@ const isMobileMenuOpen = ref(false);
 const menuItems = [
   { name: "Home", href: "#home" },
   { name: "Services", href: "#services" },
-  { name: "How We Works", href: "#how-we-works" },
   { name: "Projects", href: "#projects" },
-  { name: "Clients", href: "#clients" },
   { name: "Team", href: "#team" },
 ];
 
@@ -30,7 +28,6 @@ const closeMenu = () => (isMobileMenuOpen.value = false);
           >
         </div>
 
-        <!-- Desktop Menu -->
         <div class="hidden md:flex space-x-8 items-center">
           <a
             v-for="item in menuItems"
@@ -40,6 +37,9 @@ const closeMenu = () => (isMobileMenuOpen.value = false);
           >
             {{ item.name }}
           </a>
+        </div>
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex space-x-8 items-center">
           <!-- devfin CTA Button -->
           <a
             :href="`https://t.me/lenglykoura`"
