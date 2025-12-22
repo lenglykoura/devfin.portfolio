@@ -11,51 +11,41 @@ export const messages = {
         },
         // ... existing hero ...
         hero: {
-            badge: 'Now accepting new enterprise clients',
+            badge: 'Now accepting new clients',
             welcome: 'Welcome to',
             slogan: {
                 part1: 'Smart Systems.',
                 part2: 'Real Solutions.'
             },
-            desc: 'We bridge the gap between finance and technology. Delivering robust system management, innovative mobile applications, and enterprise-grade tech services.',
+            desc: 'We help businesses use technology in a simple and practical way. From system management to mobile and web applications, we build reliable solutions that support your daily operations and long-term growth.',
             workBtn: 'View Our Work',
-            serviceBtn: 'Our Services',
+            serviceBtn: 'View Our Services',
             socialProof: {
-                count: '50+ Client',
-                status: 'Already used'
-            },
-            terminal: {
-                cmd1: 'find solution --type "smart-system"',
-                output1: 'Analyzing requirements...',
-                result1: 'Optimization complete. System efficiency increased by 40%.',
-                cmd2: 'deploy --target "enterprise-cloud"',
-                output2: 'Connecting to secure environment...',
-                result2: 'Deployment successful! Real solutions delivered.',
-                cmd3: 'init-growth --mode "scale"',
-                final: '> Devfin Core Online.'
+                count: '50+ Clients',
+                status: 'Trusted by businesses'
             }
         },
         // HOW WE WORK TRANSLATIONS
         howWeWork: {
             badge: 'Process',
             title: 'How We Work',
-            subtitle: 'Getting expert help is quick and easy with our streamlined process.',
+            subtitle: 'A simple and clear process that helps you get results quickly.',
             steps: {
                 describe: {
-                    title: 'Describe Your Need',
-                    desc: 'Tell us what you need help with, whether it’s an urgent fix, a new feature, or a complete project.'
+                    title: 'Tell Us What You Need',
+                    desc: 'Share your problem, idea, or project with us. It can be a small fix, a new feature, or a full system.'
                 },
                 match: {
-                    title: 'Get Matched',
-                    desc: 'Our system instantly matches you with the perfect expert for your specific technology and requirements.'
+                    title: 'We Assign the Right Expert',
+                    desc: 'We carefully select a team member who has the right skills and experience for your specific needs.'
                 },
                 connect: {
-                    title: 'Connect & Collaborate',
-                    desc: 'Connect with your expert via chat, video, or screen sharing to explain your needs in detail.'
+                    title: 'Work Together',
+                    desc: 'You can communicate with our team through chat, video calls, or online meetings to explain details and track progress.'
                 },
                 solve: {
-                    title: 'Problem Solved',
-                    desc: 'Your expert delivers the solution, whether it’s fixing a bug, implementing a feature, or providing guidance.'
+                    title: 'We Deliver the Solution',
+                    desc: 'Our team completes the work, tests everything properly, and delivers a solution that meets your expectations.'
                 }
             }
         },
@@ -92,22 +82,22 @@ export const messages = {
             }
         },
         services: {
-            badge: 'What We Do',
-            title: 'Our Services',
-            subtitle: 'Comprehensive technology solutions tailored to scale your business with precision and efficiency.',
+            badge: 'Services',
+            title: 'What We Do',
+            subtitle: 'We provide practical technology services that help your business grow.',
             learnMore: 'Learn more',
             items: {
                 web: {
                     title: 'Web Development',
-                    desc: 'Building responsive, scalable, and high-performance web applications using modern frameworks and best practices.'
+                    desc: 'We build clean, fast, and responsive websites that work well on all devices and are easy to maintain.'
                 },
                 mobile: {
-                    title: 'Mobile Development',
-                    desc: 'Creating seamless native and cross-platform mobile experiences for iOS and Android that engage users on the go.'
+                    title: 'Mobile App Development',
+                    desc: 'We create mobile applications for iOS and Android that are reliable, user-friendly, and designed for real users.'
                 },
                 db: {
                     title: 'Database Solutions',
-                    desc: 'Designing robust data architectures and efficient storage systems to ensure data integrity, security, and speed.'
+                    desc: 'We design and manage secure databases that keep your data organized, safe, and easy to access.'
                 }
             }
         },
@@ -291,51 +281,41 @@ export const messages = {
             contact: 'ទាក់ទងមកយើង'
         },
         hero: {
-            badge: 'ទទួលអតិថិជនសហគ្រាសថ្មី',
+            badge: 'កំពុងទទួលអតិថិជនថ្មី',
             welcome: 'ស្វាគមន៍មកកាន់',
             slogan: {
-                part1: 'ប្រព័ន្ធឆ្លាតវៃ។',
-                part2: 'ដំណោះស្រាយពិត។'
+                part1: 'ប្រព័ន្ធឆ្លាតវៃ ',
+                part2: 'ដំណោះស្រាយពិត'
             },
-            desc: 'យើងផ្សារភ្ជាប់គម្លាតរវាងហិរញ្ញវត្ថុ និងបច្ចេកវិទ្យា។ ផ្តល់ជូននូវការគ្រប់គ្រងប្រព័ន្ធដ៏រឹងមាំ កម្មវិធីទូរស័ព្ទប្រកបដោយភាពច្នៃប្រឌិត និងសេវាកម្មបច្ចេកវិទ្យាកម្រិតសហគ្រាស។',
-            workBtn: 'មើលស្នាដៃ',
-            serviceBtn: 'សេវាកម្ម',
+            desc: 'យើងជួយភ្ជាប់បច្ចេកវិទ្យាជាមួយអាជីវកម្ម ដើម្បីបង្កើតប្រព័ន្ធ និងកម្មវិធីដែលងាយប្រើ មានសុវត្ថិភាព និងជួយអោយការងាររបស់អ្នកដំណើរការលឿនជាងមុន។',
+            workBtn: 'មើលស្នាដៃរបស់យើង',
+            serviceBtn: 'មើលសេវាកម្ម',
             socialProof: {
                 count: 'អតិថិជន ៥០+',
-                status: 'បានប្រើប្រាស់រួចរាល់'
-            },
-            terminal: {
-                cmd1: 'រក ដំណោះស្រាយ --ប្រភេទ "ប្រព័ន្ធឆ្លាតវៃ"',
-                output1: 'កំពុងវិភាគតម្រូវការ...',
-                result1: 'ការបង្កើនប្រសិទ្ធភាពបានបញ្ចប់។ ប្រសិទ្ធភាពប្រព័ន្ធកើនឡើង ៤០%។',
-                cmd2: 'ដាក់ឱ្យប្រើប្រាស់ --គោលដៅ "ក្លោដសហគ្រាស"',
-                output2: 'កំពុងភ្ជាប់ទៅបរិស្ថានដែលមានសុវត្ថិភាព...',
-                result2: 'ការដាក់ឱ្យប្រើប្រាស់ជោគជ័យ! ផ្តល់ជូនដំណោះស្រាយពិតប្រាកដ។',
-                cmd3: 'ចាប់ផ្តើម --របៀប "ពង្រីក"',
-                final: '> Devfin Core ដំណើរការ។'
+                status: 'បានជឿទុកចិត្ត និងប្រើប្រាស់'
             }
         },
         // HOW WE WORK TRANSLATIONS (KHMER)
         howWeWork: {
             badge: 'ដំណើរការ',
             title: 'របៀបដែលយើងធ្វើការ',
-            subtitle: 'ទទួលបានជំនួយពីអ្នកជំនាញយ៉ាងឆាប់រហ័ស និងងាយស្រួលជាមួយដំណើរការដ៏មានប្រសិទ្ធភាពរបស់យើង។',
+            subtitle: 'ដំណើរការងាយៗ ដែលជួយអោយអ្នកទទួលបានសេវាកម្មយ៉ាងឆាប់រហ័ស',
             steps: {
                 describe: {
-                    title: 'ពណ៌នាពីតម្រូវការរបស់អ្នក',
-                    desc: 'ប្រាប់យើងពីអ្វីដែលអ្នកត្រូវការជំនួយ មិនថាជាការជួសជុលបន្ទាន់ លក្ខណៈពិសេសថ្មី ឬគម្រោងទាំងមូល។'
+                    title: 'ប្រាប់យើងពីអ្វីដែលអ្នកត្រូវការ',
+                    desc: 'អ្នកអាចប្រាប់យើងពីបញ្ហា ឬគម្រោងដែលអ្នកចង់ធ្វើ មិនថាជាការជួសជុល ប្រព័ន្ធថ្មី ឬការកែលម្អអ្វីមួយឡើយ។'
                 },
                 match: {
-                    title: 'ស្វែងរកដៃគូ',
-                    desc: 'ប្រព័ន្ធរបស់យើងនឹងផ្គូផ្គងអ្នកជាមួយអ្នកជំនាញដ៏ល្អឥតខ្ចោះសម្រាប់បច្ចេកវិទ្យា និងតម្រូវការជាក់លាក់របស់អ្នក។'
+                    title: 'យើងជ្រើសអ្នកជំនាញសម្រាប់អ្នក',
+                    desc: 'យើងនឹងជ្រើសរើសអ្នកជំនាញដែលមានបទពិសោធន៍ និងសមស្របជាមួយតម្រូវការរបស់អ្នក។'
                 },
                 connect: {
-                    title: 'ភ្ជាប់ទំនាក់ទំនង និងសហការ',
-                    desc: 'ភ្ជាប់ទំនាក់ទំនងជាមួយអ្នកជំនាញរបស់អ្នកតាមរយៈការជជែក វីដេអូ ឬការចែករំលែកអេក្រង់ដើម្បីពន្យល់ពីតម្រូវការរបស់អ្នក។'
+                    title: 'ភ្ជាប់ទំនាក់ទំនង និងធ្វើការជាមួយគ្នា',
+                    desc: 'អ្នកអាចជជែក ប្រជុំតាមវីដេអូ ឬពន្យល់ការងារតាមអនឡាញជាមួយក្រុមរបស់យើងបានយ៉ាងងាយស្រួល។'
                 },
                 solve: {
-                    title: 'ដោះស្រាយបញ្ហា',
-                    desc: 'អ្នកជំនាញរបស់អ្នកផ្តល់នូវដំណោះស្រាយ មិនថាជាការជួសជុលកំហុស ការអនុវត្តលក្ខណៈពិសេស ឬការផ្តល់យោបល់។'
+                    title: 'ការងារត្រូវបានដោះស្រាយ',
+                    desc: 'ក្រុមការងាររបស់យើងនឹងអនុវត្តការងារឱ្យបានត្រឹមត្រូវ និងប្រគល់លទ្ធផលតាមអ្វីដែលបានព្រមព្រៀង។'
                 }
             }
         },
@@ -372,22 +352,22 @@ export const messages = {
             }
         },
         services: {
-            badge: 'សេវាកម្មរបស់យើង',
-            title: 'អ្វីដែលយើងធ្វើ',
-            subtitle: 'ដំណោះស្រាយបច្ចេកវិទ្យាដ៏ទូលំទូលាយដែលរៀបចំឡើងដើម្បីពង្រីកអាជីវកម្មរបស់អ្នកប្រកបដោយភាពជាក់លាក់ និងប្រសិទ្ធភាព។',
+            badge: 'សេវាកម្ម',
+            title: 'សេវាកម្មរបស់យើង',
+            subtitle: 'យើងផ្តល់សេវាកម្មបច្ចេកវិទ្យាដែលជួយអោយអាជីវកម្មរបស់អ្នករីកចម្រើន',
             learnMore: 'ស្វែងយល់បន្ថែម',
             items: {
                 web: {
-                    title: 'ការអភិវឌ្ឍន៍គេហទំព័រ',
-                    desc: 'បង្កើតកម្មវិធីគេហទំព័រដែលមានការឆ្លើយតប និងមានប្រសិទ្ធភាពខ្ពស់ដោយប្រើបច្ចេកវិទ្យាទំនើប។'
+                    title: 'បង្កើតគេហទំព័រ',
+                    desc: 'យើងបង្កើតគេហទំព័រដែលមានរូបរាងស្អាត ប្រើប្រាស់ងាយស្រួល និងអាចដំណើរការល្អលើទូរស័ព្ទ និងកុំព្យូទ័រ។'
                 },
                 mobile: {
-                    title: 'ការអភិវឌ្ឍន៍កម្មវិធីទូរស័ព្ទ',
-                    desc: 'បង្កើតកម្មវិធីទូរស័ព្ទសម្រាប់ iOS និង Android ដែលមានដំណើរការរលូន និងទាក់ទាញអ្នកប្រើប្រាស់។'
+                    title: 'បង្កើតកម្មវិធីទូរស័ព្ទ',
+                    desc: 'យើងបង្កើតកម្មវិធីសម្រាប់ Android និង iOS ដែលមានល្បឿនលឿន និងងាយស្រួលប្រើសម្រាប់អ្នកប្រើប្រាស់។'
                 },
                 db: {
-                    title: 'ដំណោះស្រាយទិន្នន័យ',
-                    desc: 'រចនាស្ថាបត្យកម្មទិន្នន័យដ៏រឹងមាំ និងប្រព័ន្ធផ្ទុកទិន្នន័យដែលមានប្រសិទ្ធភាព ដើម្បីធានាសុវត្ថិភាព និងល្បឿន។'
+                    title: 'ប្រព័ន្ធទិន្នន័យ',
+                    desc: 'យើងរៀបចំ និងគ្រប់គ្រងទិន្នន័យរបស់អ្នកឱ្យមានសុវត្ថិភាព មានរបៀបរៀបចំល្អ និងងាយស្រួលប្រើ។'
                 }
             }
         },
