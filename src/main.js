@@ -2,7 +2,7 @@ import { createApp } from 'vue'
 import { createI18n } from 'vue-i18n' // Requires: npm install vue-i18n
 import App from './App.vue'
 import './style.css' // Ensure this imports your Tailwind directives
-import { messages } from './messages'
+import { messages } from './translate'
 
 const app = createApp(App);
 

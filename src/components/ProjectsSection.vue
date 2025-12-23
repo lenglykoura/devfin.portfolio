@@ -69,7 +69,7 @@ const projects = computed(() => [
 </script>
 
 <template>
-  <section id="projects" class="py-24 bg-[#0b1120] relative overflow-hidden">
+  <section id="projects" class="py-24 bg-[#0b1120] relative overflow-hidden border-t">
     <!-- Background Decoration -->
     <div class="absolute inset-0 z-0 opacity-20" 
          style="background-image: radial-gradient(#1e293b 1px, transparent 1px); background-size: 30px 30px;">

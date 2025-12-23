@@ -47,7 +47,7 @@ const plans = computed(() => [
 </script>
 
 <template>
-  <section id="pricing" class="py-24 bg-[#080c16] relative overflow-hidden">
+  <section id="pricing" class="py-24 bg-[#080c16] relative overflow-hidden border-t">
     <!-- Background Decoration -->
     <div
       class="absolute inset-0 z-0 opacity-20"
