@@ -500,17 +500,17 @@ export const messages = {
             members: {
                 lykoura: {
                     name: 'ឡេង លីគូរ៉ា',
-                    role: 'អ្នកដឹកនាំក្រុម & អ្នកសរសេរកូដវេប',
+                    role: 'អ្នកដឹកនាំក្រុម & អ្នកអភិវឌ្ឍន៍គេហទំព័រ',
                     desc: 'អ្នកសរសេរកូដ Full-stack ជំនាញ Vue និង Laravel & ASP.NET'
                 },
                 tela: {
                     name: 'ទៀង តេលា',
-                    role: 'អ្នកសរសេរកូដវេប',
+                    role: 'អ្នកអភិវឌ្ឍន៍គេហទំព័រ',
                     desc: 'អ្នកសរសេរកូដ Full-stack ជំនាញ Vue និង Laravel'
                 },
                 theang: {
                     name: 'ធា ចាន់ធៀង',
-                    role: 'អ្នកសរសេរកូដវេប',
+                    role: 'អ្នកអភិវឌ្ឍន៍គេហទំព័រ',
                     desc: 'អ្នកសរសេរកូដ Full-stack ជំនាញ Vue និង Laravel'
                 },
             }

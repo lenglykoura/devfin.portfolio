@@ -40,7 +40,7 @@ const projects = computed(() => [
         class: "bg-orange-500/10 text-orange-400 border-orange-500/20",
       },
     ],
-    delay: 200,
+    delay: 100,
   },
   {
     title: t('projects.items.pos.title'),
@@ -63,7 +63,7 @@ const projects = computed(() => [
         class: "bg-slate-700/50 text-slate-300 border-slate-600/50",
       },
     ],
-    delay: 400,
+    delay: 200,
   }
 ])
 </script>

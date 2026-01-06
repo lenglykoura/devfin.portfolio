@@ -11,7 +11,7 @@ const team = computed(() => [
     role: t("team.members.lykoura.role"),
     desc: t("team.members.lykoura.desc"),
     // Ideally use high-res portrait images
-    image: "lenglykoura.jpg",
+    image: "koura.jpg",
     telegram: "lenglykoura",
     github: "lenglykoura",
     delay: 0,
@@ -26,15 +26,15 @@ const team = computed(() => [
   //   github: "theang",
   //   delay: 100,
   // },
-  // {
-  //   name: t("team.members.tela.name"),
-  //   role: t("team.members.tela.role"),
-  //   desc: t("team.members.tela.desc"),
-  //   image: "tela.jpg",
-  //   telegram: "tela",
-  //   github: "tela",
-  //   delay: 200,
-  // },
+  {
+    name: t("team.members.tela.name"),
+    role: t("team.members.tela.role"),
+    desc: t("team.members.tela.desc"),
+    image: "tela.jpg",
+    telegram: "tela",
+    github: "tela",
+    delay: 100,
+  },
 ]);
 
 // Helper function to dynamically load images from src/assets/images/
@@ -82,7 +82,7 @@ const toggleCard = (index) => {
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="text-center mb-20" v-scroll-reveal>
         <span
-         class="text-xs font-bold tracking-wider text-blue-100 uppercase bg-blue-500/10 border border-blue-500/20 px-4 py-1.5 rounded-full mb-4 inline-block"
+          class="text-xs font-bold tracking-wider text-blue-100 uppercase bg-blue-500/10 border border-blue-500/20 px-4 py-1.5 rounded-full mb-4 inline-block"
         >
           {{ t("team.badge") }}
         </span>
@@ -109,27 +109,42 @@ const toggleCard = (index) => {
         >
           <!-- 1. Background Image (Full Card) -->
           <div class="absolute inset-0 bg-slate-900">
-            <!-- Active state triggers full color, Hover state triggers same. Removed opacity-80 to make it brighter. -->
             <img
               :src="getImageUrl(member.image)"
               :alt="member.name"
               class="w-full h-full object-cover transition-all duration-700"
-              :class="
-                activeIndex === index
-                  ? 'grayscale-0 scale-110'
-                  : 'grayscale group-hover:grayscale-0 group-hover:scale-110'
-              "
+          
             />
           </div>
 
-          <!-- 2. Dark Overlay Gradient (Reduced opacity for better image visibility) -->
+          <!-- 2. White Gradient Blur Layer (Frosted Glass Effect) -->
+          <!-- Creates a white-tinted blur that is heavy at the bottom and fades out -->
           <div
-            class="absolute inset-0 bg-gradient-to-t from-[#020617] via-[#020617]/50 to-transparent opacity-70 transition-opacity duration-300"
+            class="absolute inset-0 z-10 pointer-events-none transition-opacity duration-500 bg-white/5"
+            style="
+              /* backdrop-filter: blur(12px);
+              -webkit-backdrop-filter: blur(12px); */
+              mask-image: linear-gradient(to top, black 0%, transparent 60%);
+              -webkit-mask-image: linear-gradient(
+                to top,
+                black 0%,
+                transparent 60%
+              );
+            "
+            :class="
+              activeIndex === index ? 'opacity-0' : 'group-hover:opacity-0'
+            "
           ></div>
 
-          <!-- 3. Hover Overlay (Additional darkening/tint on hover or active) -->
+          <!-- 3. Gradient Overlay -->
+          <!-- We use a subtle black-to-transparent gradient at the very bottom to ensure white text remains readable -->
           <div
-            class="absolute inset-0 bg-blue-900/20 transition-opacity duration-300"
+            class="absolute inset-0 z-20 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-100 transition-opacity duration-300"
+          ></div>
+
+          <!-- 4. Hover Overlay (Tinting on hover or active) -->
+          <div
+            class="absolute inset-0 z-30 bg-white/5 transition-opacity duration-300"
             :class="
               activeIndex === index
                 ? 'opacity-100'
@@ -137,8 +152,8 @@ const toggleCard = (index) => {
             "
           ></div>
 
-          <!-- 4. Content Container -->
-          <div class="absolute inset-0 p-6 flex flex-col justify-end">
+          <!-- 5. Content Container -->
+          <div class="absolute inset-0 z-40 p-6 flex flex-col justify-end">
             <!-- Text Content -->
             <div
               class="transform transition-transform duration-300"
@@ -148,18 +163,18 @@ const toggleCard = (index) => {
                   : 'group-hover:-translate-y-2'
               "
             >
-              <h3 class="text-2xl font-bold text-white mb-1 drop-shadow-md">
+              <h3 class="text-2xl font-bold text-white mb-1 drop-shadow-lg">
                 {{ member.name }}
               </h3>
               <p
-                class="text-sm font-semibold text-blue-100 uppercase tracking-wide mb-3 drop-shadow-sm"
+                class="text-sm font-semibold text-blue-200 uppercase tracking-wide mb-3 drop-shadow-md"
               >
                 {{ member.role }}
               </p>
 
               <!-- Description (Hidden by default, slides in/fades in) -->
               <p
-                class="text-slate-300 text-sm leading-relaxed overflow-hidden transition-all duration-500 delay-75"
+                class="text-slate-200 text-sm leading-relaxed overflow-hidden transition-all duration-500 delay-75 drop-shadow-sm"
                 :class="
                   activeIndex === index
                     ? 'opacity-100 max-h-20'
@@ -168,35 +183,30 @@ const toggleCard = (index) => {
               >
                 {{ member.desc }}
               </p>
+              <div
+                class="flex gap-3 mt-4 transform transition-all duration-500 delay-100"
+              >
+                <a
+                  :href="`https://t.me/${member.telegram}`"
+                  target="_blank"
+                  @click.stop
+                  class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-blue-600 hover:text-white transition-colors"
+                >
+                  <i class="fab fa-telegram text-lg"></i>
+                </a>
+
+                <a
+                  :href="`https://github.com/${member.github}`"
+                  target="_blank"
+                  @click.stop
+                  class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-blue-600 hover:text-white transition-colors"
+                >
+                  <i class="fab fa-github text-lg"></i>
+                </a>
+              </div>
             </div>
 
             <!-- Social Links (Slide up on hover or active) -->
-            <div
-              class="flex gap-3 mt-4 transform transition-all duration-500 delay-100"
-              :class="
-                activeIndex === index
-                  ? 'translate-y-0 opacity-100'
-                  : 'translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100'
-              "
-            >
-              <a
-                :href="`https://t.me/${member.telegram}`"
-                target="_blank"
-                @click.stop
-                class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white transition-colors"
-              >
-                <i class="fab fa-telegram text-lg"></i>
-              </a>
-
-              <a
-                :href="`https://github.com/${member.github}`"
-                target="_blank"
-                @click.stop
-                class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white transition-colors"
-              >
-                <i class="fab fa-github text-lg"></i>
-              </a>
-            </div>
           </div>
         </div>
       </div>
