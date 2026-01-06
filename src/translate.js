@@ -234,8 +234,18 @@ export const messages = {
             title: 'Meet The Team',
             subtitle: 'Experts focused on quality and new ideas.',
             members: {
-                leng: {
+                lykoura: {
                     name: 'Leng Lykoura',
+                    role: 'Team Leader & Web Developer',
+                    desc: 'Full-stack web developer skilled in Vue and Laravel & ASP.NET.'
+                },
+                tela: {
+                    name: 'Teang Tela',
+                    role: 'Web Developer',
+                    desc: 'Full-stack web developer skilled in Vue and Laravel.'
+                },
+                theang: {
+                    name: 'Thea Chantheang',
                     role: 'Web Developer',
                     desc: 'Full-stack web developer skilled in Vue and Laravel.'
                 },
@@ -488,11 +498,21 @@ export const messages = {
             title: 'ជួបក្រុមយើង',
             subtitle: 'អ្នកជំនាញដែលប្តេជ្ញាផ្តល់សេវាល្អបំផុត',
             members: {
-                leng: {
+                lykoura: {
                     name: 'ឡេង លីគូរ៉ា',
+                    role: 'អ្នកដឹកនាំក្រុម & អ្នកសរសេរកូដវេប',
+                    desc: 'អ្នកសរសេរកូដ Full-stack ជំនាញ Vue និង Laravel & ASP.NET'
+                },
+                tela: {
+                    name: 'ទៀង តេលា',
                     role: 'អ្នកសរសេរកូដវេប',
                     desc: 'អ្នកសរសេរកូដ Full-stack ជំនាញ Vue និង Laravel'
-                }
+                },
+                theang: {
+                    name: 'ធា ចាន់ធៀង',
+                    role: 'អ្នកសរសេរកូដវេប',
+                    desc: 'អ្នកសរសេរកូដ Full-stack ជំនាញ Vue និង Laravel'
+                },
             }
         },
         footer: {

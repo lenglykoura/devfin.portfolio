@@ -6,7 +6,7 @@ const { t } = useI18n();
 
 <template>
   <section
-    class="py-24 pt-0 bg-[#020617] relative overflow-hidden flex items-center"
+    class="py-24 pt-12 bg-[#020617] relative overflow-hidden flex items-center"
   >
     <!-- Background Decor -->
     <div
