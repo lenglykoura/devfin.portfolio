@@ -236,7 +236,7 @@ export const messages = {
             members: {
                 lykoura: {
                     name: 'Leng Lykoura',
-                    role: 'Team Leader & Web Developer',
+                    role: 'Lead Developer',
                     desc: 'Full-stack web developer skilled in Vue and Laravel & ASP.NET.'
                 },
                 tela: {
@@ -500,17 +500,17 @@ export const messages = {
             members: {
                 lykoura: {
                     name: 'ឡេង លីគូរ៉ា',
-                    role: 'អ្នកដឹកនាំក្រុម & អ្នកអភិវឌ្ឍន៍គេហទំព័រ',
+                    role: 'Lead Developer',
                     desc: 'អ្នកសរសេរកូដ Full-stack ជំនាញ Vue និង Laravel & ASP.NET'
                 },
                 tela: {
                     name: 'ទៀង តេលា',
-                    role: 'អ្នកអភិវឌ្ឍន៍គេហទំព័រ',
+                    role: 'Web Developer',
                     desc: 'អ្នកសរសេរកូដ Full-stack ជំនាញ Vue និង Laravel'
                 },
                 theang: {
                     name: 'ធា ចាន់ធៀង',
-                    role: 'អ្នកអភិវឌ្ឍន៍គេហទំព័រ',
+                    role: 'Web Developer',
                     desc: 'អ្នកសរសេរកូដ Full-stack ជំនាញ Vue និង Laravel'
                 },
             }
