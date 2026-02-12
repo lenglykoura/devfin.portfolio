@@ -31,8 +31,8 @@ const team = computed(() => [
     role: t("team.members.tela.role"),
     desc: t("team.members.tela.desc"),
     image: "tela.jpg",
-    telegram: "tela",
-    github: "tela",
+    telegram: "Y_NotMe",
+    github: "TLAR2411",
     delay: 100,
   },
 ]);
