@@ -504,7 +504,7 @@ export const messages = {
                     desc: 'អ្នកសរសេរកូដ Full-stack ជំនាញ Vue និង Laravel & ASP.NET'
                 },
                 tela: {
-                    name: 'ទៀង តេលា',
+                    name: 'ទាង តេលា',
                     role: 'Web Developer',
                     desc: 'អ្នកសរសេរកូដ Full-stack ជំនាញ Vue និង Laravel'
                 },
