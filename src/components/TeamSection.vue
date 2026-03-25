@@ -17,15 +17,15 @@ const team = computed(() => [
     delay: 0,
   },
 
-  // {
-  //   name: t("team.members.theang.name"),
-  //   role: t("team.members.theang.role"),
-  //   desc: t("team.members.theang.desc"),
-  //   image: "theang.jpg",
-  //   telegram: "theang",
-  //   github: "theang",
-  //   delay: 100,
-  // },
+  {
+    name: t("team.members.theang.name"),
+    role: t("team.members.theang.role"),
+    desc: t("team.members.theang.desc"),
+    image: "theang.jpg",
+    telegram: "theang",
+    github: "theang",
+    delay: 100,
+  },
   {
     name: t("team.members.tela.name"),
     role: t("team.members.tela.role"),
@@ -33,7 +33,7 @@ const team = computed(() => [
     image: "tela.jpg",
     telegram: "Y_NotMe",
     github: "TLAR2411",
-    delay: 100,
+    delay: 200,
   },
 ]);
 
