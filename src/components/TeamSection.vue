@@ -62,7 +62,7 @@ const toggleCard = (index) => {
 <template>
   <section
     id="team"
-    class="py-24 bg-[#020617] relative overflow-hidden border-t"
+    class="py-24 bg-[#020617] relative overflow-hidden border-t border-slate-800"
   >
     <!-- Background Decoration -->
     <div

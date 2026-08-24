@@ -87,7 +87,7 @@ const projects = computed(() => [
 <template>
   <section
     id="projects"
-    class="py-24 bg-[#0b1120] relative overflow-hidden border-t"
+    class="py-24 bg-[#0b1120] relative overflow-hidden border-t border-slate-800"
   >
     <!-- Background Decoration -->
     <div

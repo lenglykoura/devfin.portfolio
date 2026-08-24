@@ -19,7 +19,7 @@ export default {
                 }
             },
             fontFamily: {
-                sans: ['Inter', 'Google Sans', 'sans-serif'],
+                sans: ['Inter', 'Google Sans', 'Noto Sans Khmer', 'sans-serif'],
             }
         },
     },

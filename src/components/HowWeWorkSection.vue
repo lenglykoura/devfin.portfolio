@@ -39,7 +39,7 @@ const steps = computed(() => [
 <template>
   <section
     id="how-it-works"
-    class="py-24 bg-[#080c16] relative overflow-hidden border-t"
+    class="py-24 bg-[#080c16] relative overflow-hidden border-t border-slate-800"
   >
     <!-- Decorative Background Elements -->
     <div

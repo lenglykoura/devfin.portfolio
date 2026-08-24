@@ -31,7 +31,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="font-sans text-slate-800 bg-slate-2000 scroll-smooth relative">
+  <div class="font-sans text-slate-800 bg-[#020617] scroll-smooth relative">
     <!-- Global Spotlight/Scope Light -->
     <!-- Fixed position ensures it covers the whole screen while scrolling -->
     <div
