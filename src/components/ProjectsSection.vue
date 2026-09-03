@@ -81,6 +81,31 @@ const projects = computed(() => [
     ],
     delay: 200,
   },
+  {
+    title: t("projects.items.school.title"),
+    status: t("projects.items.school.status"),
+    statusClass: "bg-devfin-500/10 text-blue-100 border-devfin-500/20",
+    description: t("projects.items.school.desc"),
+    image:
+      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=800", // Placeholder
+    icon: "fa-graduation-cap",
+    gradient: "bg-gradient-to-br from-slate-800 to-slate-900",
+    techStack: [
+      {
+        name: "Vue.js",
+        class: "bg-devfin-500/10 text-blue-200 border-devfin-500/20",
+      },
+      {
+        name: "Laravel",
+        class: "bg-red-500/10 text-red-400 border-red-500/20",
+      },
+      {
+        name: "MySQL",
+        class: "bg-orange-500/10 text-orange-400 border-orange-500/20",
+      },
+    ],
+    delay: 300,
+  },
 ]);
 </script>
 
@@ -126,12 +151,12 @@ const projects = computed(() => [
       </div>
 
       <!-- Changed from grid-cols-2 to grid-cols-3 to accommodate 3 items -->
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div class="flex flex-wrap justify-center gap-8">
         <div
           v-for="(project, index) in projects"
           :key="index"
           v-scroll-reveal="project.delay"
-          class="group flex flex-col bg-slate-900 rounded-3xl overflow-hidden shadow-xl shadow-black/30 border border-slate-800 hover:border-slate-700 transition-all duration-500 hover:-translate-y-2"
+          class="group flex flex-col w-full lg:w-[calc((100%-4rem)/3)] bg-slate-900 rounded-3xl overflow-hidden shadow-xl shadow-black/30 border border-slate-800 hover:border-slate-700 transition-all duration-500 hover:-translate-y-2"
         >
           <div class="h-52 relative overflow-hidden bg-slate-800/50">
             <img

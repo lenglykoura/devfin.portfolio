@@ -14,28 +14,6 @@ const i18n = createI18n({
 })
 app.use(i18n)
 
-// --- ADD THIS FUNCTION ---
-async function detectLocation() {
-    try {
-        // Fetch user data from free API
-        const response = await fetch('https://ipapi.co/json/');
-        const data = await response.json();
-
-        // Check Country Code (KH is Cambodia)
-        if (data.country_code !== 'KH') {
-            // If NOT Cambodia, switch to English
-            i18n.global.locale.value = 'en';
-        } else {
-            // If it IS Cambodia, ensure it is Khmer
-            i18n.global.locale.value = 'km';
-        }
-    } catch (error) {
-        console.error("Could not detect location, staying with default:", error);
-    }
-}
-
-// Call the function
-detectLocation();
 // Custom Directive: v-scroll-reveal
 app.directive('scroll-reveal', {
     mounted(el, binding) {

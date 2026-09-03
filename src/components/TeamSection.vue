@@ -47,15 +47,11 @@ const getImageUrl = (name) => {
   }
 };
 
-// State to track which card is active (clicked) on mobile
+// State to track which card is active (tapped) on mobile / touch devices
 const activeIndex = ref(null);
 
 const toggleCard = (index) => {
-  if (activeIndex.value === index) {
-    activeIndex.value = null;
-  } else {
-    activeIndex.value = index;
-  }
+  activeIndex.value = activeIndex.value === index ? null : index;
 };
 </script>
 
@@ -91,122 +87,90 @@ const toggleCard = (index) => {
         >
           {{ t("team.title") }}
         </h2>
-        <p
-          class="mt-6 max-w-2xl text-xl text-slate-400 mx-auto leading-relaxed"
-        >
+        <p class="mt-6 max-w-2xl text-xl text-slate-400 mx-auto leading-relaxed">
           {{ t("team.subtitle") }}
         </p>
       </div>
 
-      <!-- Use Flexbox instead of Grid for center alignment of variable items -->
+      <!-- Flexbox keeps a partial last row centered -->
       <div class="flex flex-wrap justify-center gap-8">
         <div
           v-for="(member, index) in team"
           :key="index"
           v-scroll-reveal="member.delay"
-          class="group relative h-[420px] w-full max-w-sm sm:w-72 lg:w-80 rounded-3xl overflow-hidden cursor-pointer shadow-lg border border-slate-800 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-900/20 hover:border-blue-500/50"
+          class="group relative h-[460px] w-full max-w-sm sm:w-72 lg:w-80 rounded-3xl overflow-hidden cursor-pointer shadow-lg border border-slate-800 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-900/30 hover:border-blue-500/50"
+          :class="{ 'is-active': activeIndex === index }"
           @click="toggleCard(index)"
         >
-          <!-- 1. Background Image (Full Card) -->
-          <div class="absolute inset-0 bg-slate-900">
-            <img
-              :src="getImageUrl(member.image)"
-              :alt="member.name"
-              class="w-full h-full object-cover transition-all duration-700"
-          
-            />
-          </div>
+          <!-- Portrait -->
+          <img
+            :src="getImageUrl(member.image)"
+            :alt="member.name"
+            class="absolute inset-0 w-full h-full object-cover object-top bg-slate-900 transition-transform duration-700 ease-out group-hover:scale-105 group-[.is-active]:scale-105"
+          />
 
-          <!-- 2. White Gradient Blur Layer (Frosted Glass Effect) -->
-          <!-- Creates a white-tinted blur that is heavy at the bottom and fades out -->
+          <!-- Readability gradient: soft, bottom-anchored -->
           <div
-            class="absolute inset-0 z-10 pointer-events-none transition-opacity duration-500 bg-white/5"
-            style="
-              /* backdrop-filter: blur(12px);
-              -webkit-backdrop-filter: blur(12px); */
-              mask-image: linear-gradient(to top, black 0%, transparent 60%);
-              -webkit-mask-image: linear-gradient(
-                to top,
-                black 0%,
-                transparent 60%
-              );
-            "
-            :class="
-              activeIndex === index ? 'opacity-0' : 'group-hover:opacity-0'
-            "
+            class="absolute inset-0 bg-gradient-to-t from-black/95 from-5% via-black/40 via-35% to-transparent to-60%"
           ></div>
 
-          <!-- 3. Gradient Overlay -->
-          <!-- We use a subtle black-to-transparent gradient at the very bottom to ensure white text remains readable -->
+          <!-- Extra darkening behind the text block, deepens on reveal -->
           <div
-            class="absolute inset-0 z-20 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-100 transition-opacity duration-300"
+            class="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-black/80 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-100 group-[.is-active]:opacity-100"
           ></div>
 
-          <!-- 4. Hover Overlay (Tinting on hover or active) -->
+          <!-- Subtle brand tint on reveal -->
           <div
-            class="absolute inset-0 z-30 bg-white/5 transition-opacity duration-300"
-            :class="
-              activeIndex === index
-                ? 'opacity-100'
-                : 'opacity-0 group-hover:opacity-100'
-            "
+            class="absolute inset-0 bg-blue-600/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100 group-[.is-active]:opacity-100"
           ></div>
 
-          <!-- 5. Content Container -->
-          <div class="absolute inset-0 z-40 p-6 flex flex-col justify-end">
-            <!-- Text Content -->
+          <!-- Content -->
+          <div class="absolute inset-x-0 bottom-0 z-10 p-6">
             <div
-              class="transform transition-transform duration-300"
-              :class="
-                activeIndex === index
-                  ? '-translate-y-2'
-                  : 'group-hover:-translate-y-2'
-              "
+              class="transition-transform duration-500 ease-out group-hover:-translate-y-1 group-[.is-active]:-translate-y-1"
             >
-              <h3 class="text-2xl font-bold text-white mb-1 drop-shadow-lg">
+              <h3 class="text-2xl font-bold text-white drop-shadow-lg">
                 {{ member.name }}
               </h3>
               <p
-                class="text-sm font-semibold text-blue-200 uppercase tracking-wide mb-3 drop-shadow-md"
+                class="mt-1 text-xs font-semibold text-blue-300 uppercase tracking-widest drop-shadow"
               >
                 {{ member.role }}
               </p>
 
-              <!-- Description (Hidden by default, slides in/fades in) -->
-              <p
-                class="text-slate-200 text-sm leading-relaxed overflow-hidden transition-all duration-500 delay-75 drop-shadow-sm"
-                :class="
-                  activeIndex === index
-                    ? 'opacity-100 max-h-20'
-                    : 'opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-20'
-                "
-              >
-                {{ member.desc }}
-              </p>
+              <!-- Description: revealed on hover / tap -->
               <div
-                class="flex gap-3 mt-4 transform transition-all duration-500 delay-100"
+                class="grid grid-rows-[0fr] opacity-0 transition-all duration-500 ease-out group-hover:grid-rows-[1fr] group-hover:opacity-100 group-hover:mt-3 group-[.is-active]:grid-rows-[1fr] group-[.is-active]:opacity-100 group-[.is-active]:mt-3"
               >
+                <p
+                  class="overflow-hidden text-sm leading-relaxed text-slate-200 drop-shadow-sm"
+                >
+                  {{ member.desc }}
+                </p>
+              </div>
+
+              <!-- Social Links -->
+              <div class="mt-4 flex gap-3">
                 <a
                   :href="`https://t.me/${member.telegram}`"
                   target="_blank"
+                  rel="noopener"
                   @click.stop
-                  class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-blue-600 hover:text-white transition-colors"
+                  class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-blue-600 hover:border-blue-600 transition-colors duration-300 hover:-translate-y-1"
                 >
                   <i class="fab fa-telegram text-lg"></i>
                 </a>
-
                 <a
                   :href="`https://github.com/${member.github}`"
                   target="_blank"
+                  rel="noopener"
                   @click.stop
-                  class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-blue-600 hover:text-white transition-colors"
+                  class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-blue-600 hover:border-blue-600 transition-colors duration-300 hover:-translate-y-1"
                 >
                   <i class="fab fa-github text-lg"></i>
                 </a>
               </div>
             </div>
-
-            <!-- Social Links (Slide up on hover or active) -->
           </div>
         </div>
       </div>

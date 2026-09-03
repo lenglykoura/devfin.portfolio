@@ -111,19 +111,24 @@ export const messages = {
             technologies: 'Built with',
             items: {
                 loan: {
-                    title: 'Loan Manager',
+                    title: 'Loan Management System',
                     status: 'Live',
                     desc: 'A complete dashboard for banks to manage borrowers, calculate interest automatically, and track payments.'
                 },
                 hotel: {
-                    title: 'Hotel Manager',
+                    title: 'Hotel Management System',
                     status: 'Live',
                     desc: 'A complete hotel system with room booking, guest management, billing, and live room availability.'
                 },
                 pos: {
-                    title: 'Store Cash Register',
+                    title: 'POS Management System',
                     status: 'Enterprise',
                     desc: 'A fast Point of Sale system for retail stores. Track inventory, scan barcodes, and see live sales data.'
+                },
+                school: {
+                    title: 'School Management System',
+                    status: 'Live',
+                    desc: 'A complete school platform for student enrollment, class scheduling, grades, attendance tracking, and parent communication.'
                 }
             }
         },
@@ -375,19 +380,24 @@ export const messages = {
             technologies: 'បច្ចេកវិទ្យា',
             items: {
                 loan: {
-                    title: 'គ្រប់គ្រងប្រាក់កម្ចី',
+                    title: 'ប្រព័ន្ធគ្រប់គ្រងប្រាក់កម្ចី',
                     status: 'កំពុងដំណើរការ',
                     desc: 'ប្រព័ន្ធគ្រប់គ្រងប្រាក់កម្ចីសម្រាប់ធនាគារ។ គណនាការប្រាក់ស្វ័យប្រវត្តិ និងតាមដានការសងប្រាក់។'
                 },
                 hotel: {
-                    title: 'គ្រប់គ្រងសណ្ឋាគារ',
+                    title: 'ប្រព័ន្ធគ្រប់គ្រងសណ្ឋាគារ',
                     status: 'កំពុងដំណើរការ',
                     desc: 'ប្រព័ន្ធគ្រប់គ្រងសណ្ឋាគារ កក់បន្ទប់ គ្រប់គ្រងភ្ញៀវ គិតលុយ និងមើលស្ថិតិ។'
                 },
                 pos: {
-                    title: 'គ្រប់គ្រង POS',
+                    title: 'ប្រព័ន្ធគ្រប់គ្រង POS',
                     status: 'សហគ្រាសធំ',
                     desc: 'ម៉ាស៊ីនគិតលុយសម្រាប់ហាងលក់រាយ។ តាមដានស្តុក ស្កេនបាកូដ និងមើលស្ថិតិការលក់។'
+                },
+                school: {
+                    title: 'ប្រព័ន្ធគ្រប់គ្រងសាលារៀន',
+                    status: 'កំពុងដំណើរការ',
+                    desc: 'ប្រព័ន្ធគ្រប់គ្រងសាលារៀនពេញលេញ៖ ចុះឈ្មោះសិស្ស កាលវិភាគថ្នាក់ ពិន្ទុ តាមដានវត្តមាន និងទំនាក់ទំនងមាតាបិតា។'
                 }
             }
         },
