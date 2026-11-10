@@ -89,6 +89,7 @@ const plans = computed(() => [
           v-for="(plan, index) in plans"
           :key="index"
           v-scroll-reveal="{ delay: plan.delay }"
+          v-touch-active
           class="relative group"
           :class="plan.popular ? 'z-10' : ''"
         >
@@ -99,13 +100,13 @@ const plans = computed(() => [
           ></div>
           <!-- Hover glow in the plan's color -->
           <div
-            class="absolute -inset-4 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+            class="absolute -inset-4 rounded-3xl blur-2xl opacity-0 group-live:opacity-100 transition-opacity duration-500 pointer-events-none"
             :style="`background: radial-gradient(circle at 50% 0%, ${plan.accentColor}25, transparent 70%)`"
           ></div>
 
           <!-- Card -->
           <div
-            class="relative flex flex-col h-full rounded-2xl border transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+            class="relative flex flex-col h-full rounded-2xl border transition-all duration-300 hover:-translate-y-1 max-md:group-live:-translate-y-1 max-md:group-live:border-slate-600 overflow-hidden"
             :class="[
               plan.popular
                 ? 'bg-[#0c1629] border-blue-500/30 shadow-2xl shadow-blue-900/30 md:-translate-y-4 md:hover:-translate-y-5'

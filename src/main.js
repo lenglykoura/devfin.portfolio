@@ -78,4 +78,21 @@ app.directive('scroll-reveal', {
     }
 })
 
+// Custom Directive: v-touch-active
+// Touch screens can't hover, so mark the element .is-active while it crosses the middle of the screen.
+app.directive('touch-active', {
+    mounted(el) {
+        if (window.matchMedia('(hover: hover)').matches) return;
+        const observer = new IntersectionObserver(
+            ([entry]) => el.classList.toggle('is-active', entry.isIntersecting),
+            { rootMargin: '-35% 0px -35% 0px' } // middle 30% of the screen
+        );
+        observer.observe(el);
+        el._touchActiveObserver = observer;
+    },
+    unmounted(el) {
+        el._touchActiveObserver?.disconnect();
+    }
+})
+
 app.mount('#app');

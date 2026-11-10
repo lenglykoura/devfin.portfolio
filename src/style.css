@@ -1,6 +1,18 @@
 @import "tailwindcss";
 @config "../tailwind.config.js";
 
+/* group-live: hover on mouse devices, or "card is in the middle of the screen" on touch (v-touch-active adds .is-active) */
+@custom-variant group-live {
+  @media (hover: hover) {
+    .group:hover & {
+      @slot;
+    }
+  }
+  .group.is-active & {
+    @slot;
+  }
+}
+
 .tech-badge {
   transition: transform 0.2s ease;
 }

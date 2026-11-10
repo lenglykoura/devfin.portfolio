@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed } from "vue";
+import { computed } from "vue";
 import { useI18n } from "vue-i18n";
 
 const { t } = useI18n();
@@ -47,12 +47,6 @@ const getImageUrl = (name) => {
   }
 };
 
-// State to track which card is active (tapped) on mobile / touch devices
-const activeIndex = ref(null);
-
-const toggleCard = (index) => {
-  activeIndex.value = activeIndex.value === index ? null : index;
-};
 </script>
 
 <template>
@@ -100,22 +94,21 @@ const toggleCard = (index) => {
           v-for="(member, index) in team"
           :key="index"
           v-scroll-reveal="member.delay"
+          v-touch-active
           class="group relative w-full max-w-sm sm:w-72 lg:w-80"
-          :class="{ 'is-active': activeIndex === index }"
-          @click="toggleCard(index)"
         >
           <!-- Hover / tap glow behind the card -->
           <div
-            class="absolute -inset-3 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 group-[.is-active]:opacity-100 transition-opacity duration-500 pointer-events-none bg-gradient-to-b from-blue-500/20 via-cyan-500/10 to-purple-500/20"
+            class="absolute -inset-3 rounded-3xl blur-2xl opacity-0 group-live:opacity-100 transition-opacity duration-500 pointer-events-none bg-gradient-to-b from-blue-500/20 via-cyan-500/10 to-purple-500/20"
           ></div>
         <div
-          class="shine relative h-[460px] w-full rounded-2xl overflow-hidden cursor-pointer shadow-xl shadow-black/20 border border-slate-800 transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-blue-900/40 group-hover:border-blue-400/40 group-[.is-active]:-translate-y-2 group-[.is-active]:shadow-2xl group-[.is-active]:shadow-blue-900/40 group-[.is-active]:border-blue-400/40"
+          class="shine relative h-[460px] w-full rounded-2xl overflow-hidden shadow-xl shadow-black/20 border border-slate-800 transition-all duration-500 group-live:-translate-y-2 group-live:shadow-2xl group-live:shadow-blue-900/40 group-live:border-blue-400/40"
         >
           <!-- Portrait -->
           <img
             :src="getImageUrl(member.image)"
             :alt="member.name"
-            class="absolute inset-0 w-full h-full object-cover object-top bg-slate-900 transition-transform duration-700 ease-out group-hover:scale-105 group-[.is-active]:scale-105"
+            class="absolute inset-0 w-full h-full object-cover object-top bg-slate-900 transition-transform duration-700 ease-out group-live:scale-105"
           />
 
           <!-- Readability gradient: soft, bottom-anchored -->
@@ -125,12 +118,12 @@ const toggleCard = (index) => {
 
           <!-- Extra darkening behind the text block, deepens on reveal -->
           <div
-            class="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-[#0b1426]/60 to-transparent opacity-40 transition-opacity duration-500 group-hover:opacity-100 group-[.is-active]:opacity-100"
+            class="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-[#0b1426]/60 to-transparent opacity-40 transition-opacity duration-500 group-live:opacity-100"
           ></div>
 
           <!-- Subtle brand tint on reveal -->
           <div
-            class="absolute inset-0 bg-blue-600/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100 group-[.is-active]:opacity-100"
+            class="absolute inset-0 bg-blue-600/10 opacity-0 transition-opacity duration-500 group-live:opacity-100"
           ></div>
 
           <!-- Glass edge -->
@@ -141,7 +134,7 @@ const toggleCard = (index) => {
           <!-- Content -->
           <div class="absolute inset-x-0 bottom-0 z-10 p-6">
             <div
-              class="transition-transform duration-500 ease-out group-hover:-translate-y-1 group-[.is-active]:-translate-y-1"
+              class="transition-transform duration-500 ease-out group-live:-translate-y-1"
             >
               <h3 class="text-2xl font-bold text-white drop-shadow-lg">
                 {{ member.name }}
@@ -155,7 +148,7 @@ const toggleCard = (index) => {
 
               <!-- Description: revealed on hover / tap -->
               <div
-                class="grid grid-rows-[0fr] opacity-0 transition-all duration-500 ease-out group-hover:grid-rows-[1fr] group-hover:opacity-100 group-hover:mt-3 group-[.is-active]:grid-rows-[1fr] group-[.is-active]:opacity-100 group-[.is-active]:mt-3"
+                class="grid grid-rows-[0fr] opacity-0 transition-all duration-500 ease-out group-live:grid-rows-[1fr] group-live:opacity-100 group-live:mt-3"
               >
                 <p
                   class="overflow-hidden text-sm leading-relaxed text-slate-200 drop-shadow-sm"

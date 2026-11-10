@@ -102,24 +102,25 @@ const projects = computed(() => [
           v-for="(project, index) in projects"
           :key="index"
           v-scroll-reveal="project.delay"
+          v-touch-active
           class="group relative"
           :style="`--accent: ${project.accentColor}; --accent-soft: ${project.accentColor}66`"
         >
           <!-- Hover glow in the project's color -->
           <div
-            class="absolute -inset-3 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+            class="absolute -inset-3 rounded-3xl blur-2xl opacity-0 group-live:opacity-100 transition-opacity duration-500 pointer-events-none"
             :style="`background: radial-gradient(circle at 50% 30%, ${project.accentColor}22, transparent 70%)`"
           ></div>
 
           <div
-            class="relative h-[440px] rounded-2xl overflow-hidden border border-slate-800 group-hover:border-(--accent-soft) shadow-xl shadow-black/20 group-hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-1.5 bg-slate-900"
+            class="relative h-[440px] rounded-2xl overflow-hidden border border-slate-800 group-live:border-(--accent-soft) shadow-xl shadow-black/20 group-live:shadow-2xl transition-all duration-500 group-live:-translate-y-1.5 bg-slate-900"
           >
             <!-- Photo fills the card -->
             <img
               :src="project.image"
               :alt="project.title"
               loading="lazy"
-              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-live:scale-110"
             />
 
             <!-- Readability gradient (navy, not black) -->
@@ -128,14 +129,14 @@ const projects = computed(() => [
             ></div>
             <!-- Color tint on hover -->
             <div
-              class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              class="absolute inset-0 opacity-0 group-live:opacity-100 transition-opacity duration-500"
               :style="`background: linear-gradient(to top, ${project.accentColor}26, transparent 60%)`"
             ></div>
 
             <!-- Top row: icon + status -->
             <div class="absolute top-5 inset-x-5 flex items-start justify-between">
               <div
-                class="w-12 h-12 rounded-xl flex items-center justify-center border backdrop-blur-md bg-slate-950/50 transition-transform duration-500 group-hover:rotate-[-6deg]"
+                class="w-12 h-12 rounded-xl flex items-center justify-center border backdrop-blur-md bg-slate-950/50 transition-transform duration-500 group-live:rotate-[-6deg]"
                 :style="`border-color: ${project.accentColor}50`"
               >
                 <i class="fas text-lg" :class="project.icon" :style="`color: ${project.accentColor}`"></i>
@@ -150,16 +151,16 @@ const projects = computed(() => [
 
             <!-- Bottom content -->
             <div class="absolute inset-x-0 bottom-0 p-6 lg:p-8">
-              <div class="transition-transform duration-500 ease-out group-hover:-translate-y-1">
+              <div class="transition-transform duration-500 ease-out group-live:-translate-y-1">
                 <h3
-                  class="text-2xl lg:text-3xl font-bold text-white drop-shadow-lg group-hover:text-(--accent) transition-colors duration-300"
+                  class="text-2xl lg:text-3xl font-bold text-white drop-shadow-lg group-live:text-(--accent) transition-colors duration-300"
                 >
                   {{ project.title }}
                 </h3>
 
                 <!-- Description: always shown on phones, slides in on hover on larger screens -->
                 <div
-                  class="grid grid-rows-[1fr] opacity-100 mt-3 md:grid-rows-[0fr] md:opacity-0 md:mt-0 transition-all duration-500 ease-out md:group-hover:grid-rows-[1fr] md:group-hover:opacity-100 md:group-hover:mt-3"
+                  class="grid grid-rows-[1fr] opacity-100 mt-3 md:grid-rows-[0fr] md:opacity-0 md:mt-0 transition-all duration-500 ease-out md:group-live:grid-rows-[1fr] md:group-live:opacity-100 md:group-live:mt-3"
                 >
                   <p class="overflow-hidden text-sm leading-relaxed text-slate-200">
                     {{ project.description }}
