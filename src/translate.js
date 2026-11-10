@@ -152,7 +152,7 @@ export const messages = {
                 },
                 sme: {
                     name: 'Growing Business',
-                    price: '$400',
+                    price: '$800',
                     period: 'starting from',
                     desc: 'Complete solutions for businesses that are growing.',
                     features: [
@@ -265,7 +265,9 @@ export const messages = {
                 db: 'Data Management'
             },
             connect: 'Connect',
-            copyright: '© 2025 Devfin. Technology Solutions. All rights reserved.'
+            company: 'Company',
+            backToTop: 'Back to top',
+            copyright: '© {year} Devfin. Technology Solutions. All rights reserved.'
         }
     },
     km: {
@@ -421,7 +423,7 @@ export const messages = {
                 },
                 sme: {
                     name: 'អាជីវកម្មកណ្តាល',
-                    price: '$400',
+                    price: '$800',
                     period: 'ចាប់ផ្តើមពី',
                     desc: 'សម្រាប់អាជីវកម្មដែលកំពុងរីកចម្រើន',
                     features: [
@@ -534,7 +536,9 @@ export const messages = {
                 db: 'ប្រព័ន្ធទិន្នន័យ'
             },
             connect: 'ទំនាក់ទំនង',
-            copyright: '© ២០២៥ Devfin. រក្សាសិទ្ធិ។'
+            company: 'ក្រុមហ៊ុន',
+            backToTop: 'ត្រឡប់ទៅលើ',
+            copyright: '© {year} Devfin. រក្សាសិទ្ធិ។'
         }
     }
 }

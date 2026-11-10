@@ -58,47 +58,56 @@ const toggleCard = (index) => {
 <template>
   <section
     id="team"
-    class="py-24 bg-[#020617] relative overflow-hidden border-t border-slate-800"
+    class="py-28 bg-[#080c16] relative overflow-hidden border-t border-slate-800/60"
   >
     <!-- Background Decoration -->
     <div
-      class="absolute inset-0 z-0 opacity-20"
+      class="absolute inset-0 z-0 opacity-[0.07]"
       style="
-        background-image: radial-gradient(#123764 1px, transparent 1px);
+        background-image: radial-gradient(#1e293b 1px, transparent 1px);
         background-size: 30px 30px;
       "
     ></div>
     <div
-      class="absolute right-0 top-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-blue-600/5 blur-[100px]"
+      class="absolute top-0 left-1/3 w-[500px] h-[500px] rounded-full bg-blue-600/5 blur-[150px] pointer-events-none"
     ></div>
     <div
-      class="absolute left-0 bottom-0 -ml-20 -mb-20 w-96 h-96 rounded-full bg-blue-500/5 blur-[100px]"
+      class="absolute bottom-0 right-1/4 w-[500px] h-[500px] rounded-full bg-purple-500/5 blur-[150px] pointer-events-none"
     ></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="text-center mb-20" v-scroll-reveal>
         <span
-          class="text-xs font-bold tracking-wider text-blue-100 uppercase bg-blue-500/10 border border-blue-500/20 px-4 py-1.5 rounded-full mb-4 inline-block"
+          class="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-cyan-300 uppercase bg-cyan-500/10 border border-cyan-500/20 px-5 py-2 rounded-full mb-6 backdrop-blur-sm"
         >
+          <span class="flex h-1.5 w-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
           {{ t("team.badge") }}
         </span>
         <h2
-          class="mt-2 text-4xl md:text-5xl font-extrabold text-white tracking-tight"
+          class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight"
         >
           {{ t("team.title") }}
         </h2>
-        <p class="mt-6 max-w-2xl text-xl text-slate-400 mx-auto leading-relaxed">
+        <p class="mt-6 max-w-2xl text-lg md:text-xl text-slate-400 mx-auto leading-relaxed">
           {{ t("team.subtitle") }}
         </p>
       </div>
 
       <!-- Flexbox keeps a partial last row centered -->
       <div class="flex flex-wrap justify-center gap-8">
+        <!-- Wrapper takes scroll-reveal's inline transform so the card's hover transitions still work -->
         <div
           v-for="(member, index) in team"
           :key="index"
           v-scroll-reveal="member.delay"
-          class="group relative h-[460px] w-full max-w-sm sm:w-72 lg:w-80 rounded-3xl overflow-hidden cursor-pointer shadow-lg border border-slate-800 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-900/30 hover:border-blue-500/50"
+          class="group relative w-full max-w-sm sm:w-72 lg:w-80"
+        >
+          <!-- Hover glow behind the card -->
+          <div
+            class="absolute -inset-3 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none bg-gradient-to-b from-blue-500/20 via-cyan-500/10 to-purple-500/20"
+          ></div>
+        <div
+          class="shine relative h-[460px] w-full rounded-2xl overflow-hidden cursor-pointer shadow-xl shadow-black/20 border border-slate-800 transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-blue-900/40 group-hover:border-blue-400/40"
           :class="{ 'is-active': activeIndex === index }"
           @click="toggleCard(index)"
         >
@@ -111,17 +120,22 @@ const toggleCard = (index) => {
 
           <!-- Readability gradient: soft, bottom-anchored -->
           <div
-            class="absolute inset-0 bg-gradient-to-t from-black/95 from-5% via-black/40 via-35% to-transparent to-60%"
+            class="absolute inset-0 bg-gradient-to-t from-[#0b1426]/85 from-5% via-[#0b1426]/30 via-35% to-transparent to-60%"
           ></div>
 
           <!-- Extra darkening behind the text block, deepens on reveal -->
           <div
-            class="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-black/80 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-100 group-[.is-active]:opacity-100"
+            class="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-[#0b1426]/60 to-transparent opacity-40 transition-opacity duration-500 group-hover:opacity-100 group-[.is-active]:opacity-100"
           ></div>
 
           <!-- Subtle brand tint on reveal -->
           <div
             class="absolute inset-0 bg-blue-600/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100 group-[.is-active]:opacity-100"
+          ></div>
+
+          <!-- Glass edge -->
+          <div
+            class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/10 pointer-events-none"
           ></div>
 
           <!-- Content -->
@@ -132,11 +146,12 @@ const toggleCard = (index) => {
               <h3 class="text-2xl font-bold text-white drop-shadow-lg">
                 {{ member.name }}
               </h3>
-              <p
-                class="mt-1 text-xs font-semibold text-blue-300 uppercase tracking-widest drop-shadow"
+              <span
+                class="mt-2 inline-flex items-center gap-2 bg-blue-600/20 text-blue-300 text-[11px] font-bold px-3 py-1 rounded-full border border-blue-500/30 tracking-wider uppercase backdrop-blur-sm"
               >
+                <span class="h-1.5 w-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
                 {{ member.role }}
-              </p>
+              </span>
 
               <!-- Description: revealed on hover / tap -->
               <div
@@ -156,7 +171,7 @@ const toggleCard = (index) => {
                   target="_blank"
                   rel="noopener"
                   @click.stop
-                  class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-blue-600 hover:border-blue-600 transition-colors duration-300 hover:-translate-y-1"
+                  class="w-10 h-10 rounded-xl bg-white/10 backdrop-blur-sm border border-white/15 flex items-center justify-center text-white hover:bg-blue-600 hover:border-blue-500 transition-all duration-300 hover:-translate-y-1"
                 >
                   <i class="fab fa-telegram text-lg"></i>
                 </a>
@@ -165,7 +180,7 @@ const toggleCard = (index) => {
                   target="_blank"
                   rel="noopener"
                   @click.stop
-                  class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-blue-600 hover:border-blue-600 transition-colors duration-300 hover:-translate-y-1"
+                  class="w-10 h-10 rounded-xl bg-white/10 backdrop-blur-sm border border-white/15 flex items-center justify-center text-white hover:bg-slate-700 hover:border-slate-500 transition-all duration-300 hover:-translate-y-1"
                 >
                   <i class="fab fa-github text-lg"></i>
                 </a>
@@ -173,7 +188,30 @@ const toggleCard = (index) => {
             </div>
           </div>
         </div>
+        </div>
       </div>
     </div>
   </section>
 </template>
+
+<style scoped>
+/* Light sweep across the photo on hover */
+.shine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  background: linear-gradient(
+    115deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.18) 50%,
+    transparent 70%
+  );
+  transform: translateX(-120%);
+}
+.group:hover .shine::after {
+  transform: translateX(120%);
+  transition: transform 0.9s ease;
+}
+</style>

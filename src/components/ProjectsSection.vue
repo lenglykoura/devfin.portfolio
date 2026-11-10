@@ -8,103 +8,46 @@ const projects = computed(() => [
   {
     title: t("projects.items.loan.title"),
     status: t("projects.items.loan.status"),
-    statusClass: "bg-devfin-500/10 text-blue-100 border-devfin-500/20",
     description: t("projects.items.loan.desc"),
-    // image: loanImg, // Use imported image
     image:
-      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800", // Placeholder
+      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800",
     icon: "fa-hand-holding-dollar",
-    gradient: "bg-gradient-to-br from-slate-800 to-slate-900",
-    techStack: [
-      {
-        name: "Vue.js",
-        class: "bg-devfin-500/10 text-blue-200 border-devfin-500/20",
-      },
-      {
-        name: "Laravel",
-        class: "bg-red-500/10 text-red-400 border-red-500/20",
-      },
-      {
-        name: "MySQL",
-        class: "bg-orange-500/10 text-orange-400 border-orange-500/20",
-      },
-    ],
+    accentColor: "#38bdf8",
+    techStack: ["Vue.js", "Laravel", "MySQL"],
     delay: 0,
   },
   {
     title: t("projects.items.hotel.title"),
     status: t("projects.items.hotel.status"),
-    statusClass: "bg-devfin-500/10 text-blue-100 border-devfin-500/20",
     description: t("projects.items.hotel.desc"),
     image:
-      "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=800", // Placeholder
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=800",
     icon: "fa-hotel",
-    gradient: "bg-gradient-to-br from-indigo-900 to-slate-900",
-    techStack: [
-      {
-        name: "Vue.js",
-        class: "bg-devfin-500/10 text-blue-200 border-devfin-500/20",
-      },
-      {
-        name: "Laravel",
-        class: "bg-red-500/10 text-red-400 border-red-500/20",
-      },
-      {
-        name: "MySQL",
-        class: "bg-orange-500/10 text-orange-400 border-orange-500/20",
-      },
-    ],
-    delay: 100,
+    accentColor: "#c084fc",
+    techStack: ["Vue.js", "Laravel", "MySQL"],
+    delay: 150,
   },
   {
     title: t("projects.items.pos.title"),
     status: t("projects.items.pos.status"),
-    statusClass: "bg-devfin-500/10 text-blue-100 border-devfin-500/20",
     description: t("projects.items.pos.desc"),
     image:
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=800", // Placeholder
+      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=800",
     icon: "fa-cash-register",
-    gradient: "bg-gradient-to-br from-indigo-900 to-slate-900",
-    techStack: [
-      {
-        name: ".NET Core",
-        class: "bg-purple-500/10 text-purple-400 border-purple-500/20",
-      },
-      {
-        name: "C#",
-        class: "bg-indigo-500/10 text-indigo-400 border-indigo-500/20",
-      },
-      {
-        name: "SQL Server",
-        class: "bg-slate-700/50 text-slate-300 border-slate-600/50",
-      },
-    ],
-    delay: 200,
+    accentColor: "#2dd4bf",
+    techStack: [".NET Core", "C#", "SQL Server"],
+    delay: 300,
   },
   {
     title: t("projects.items.school.title"),
     status: t("projects.items.school.status"),
-    statusClass: "bg-devfin-500/10 text-blue-100 border-devfin-500/20",
     description: t("projects.items.school.desc"),
     image:
-      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=800", // Placeholder
+      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=800",
     icon: "fa-graduation-cap",
-    gradient: "bg-gradient-to-br from-slate-800 to-slate-900",
-    techStack: [
-      {
-        name: "Vue.js",
-        class: "bg-devfin-500/10 text-blue-200 border-devfin-500/20",
-      },
-      {
-        name: "Laravel",
-        class: "bg-red-500/10 text-red-400 border-red-500/20",
-      },
-      {
-        name: "MySQL",
-        class: "bg-orange-500/10 text-orange-400 border-orange-500/20",
-      },
-    ],
-    delay: 300,
+    accentColor: "#34d399",
+    techStack: ["Vue.js", "Laravel", "MySQL"],
+    delay: 450,
   },
 ]);
 </script>
@@ -112,11 +55,11 @@ const projects = computed(() => [
 <template>
   <section
     id="projects"
-    class="py-24 bg-[#0b1120] relative overflow-hidden border-t border-slate-800"
+    class="py-28 bg-[#0b1120] relative overflow-hidden border-t border-slate-800/60"
   >
-    <!-- Background Decoration -->
+    <!-- Background grid -->
     <div
-      class="absolute inset-0 z-0 opacity-20"
+      class="absolute inset-0 z-0 opacity-[0.07]"
       style="
         background-image: radial-gradient(#1e293b 1px, transparent 1px);
         background-size: 30px 30px;
@@ -125,91 +68,115 @@ const projects = computed(() => [
 
     <!-- Ambient Glows -->
     <div
-      class="absolute top-1/4 right-0 w-[500px] h-[500px] bg-devfin-500/5 rounded-full blur-[120px]"
+      class="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-600/5 rounded-full blur-[150px] pointer-events-none"
     ></div>
     <div
-      class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[120px]"
+      class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-purple-500/5 rounded-full blur-[150px] pointer-events-none"
     ></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <!-- Header -->
       <div class="text-center mb-20" v-scroll-reveal>
         <span
-          class="text-xs font-bold tracking-wider text-blue-100 uppercase bg-blue-500/10 border border-blue-500/20 px-4 py-1.5 rounded-full mb-4 inline-block"
+          class="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-cyan-300 uppercase bg-cyan-500/10 border border-cyan-500/20 px-5 py-2 rounded-full mb-6 backdrop-blur-sm"
         >
+          <span class="flex h-1.5 w-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
           {{ t("projects.badge") }}
         </span>
         <h2
-          class="mt-2 text-4xl md:text-5xl font-extrabold text-white tracking-tight"
+          class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight"
         >
           {{ t("projects.title") }}
         </h2>
         <p
-          class="mt-6 max-w-2xl text-xl text-slate-400 mx-auto leading-relaxed"
+          class="mt-6 max-w-2xl text-lg md:text-xl text-slate-400 mx-auto leading-relaxed"
         >
           {{ t("projects.subtitle") }}
         </p>
       </div>
 
-      <!-- Changed from grid-cols-2 to grid-cols-3 to accommodate 3 items -->
-      <div class="flex flex-wrap justify-center gap-8">
+      <!-- Projects 2x2 grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        <!-- Wrapper takes scroll-reveal's inline transform so the card's hover transitions still work -->
         <div
           v-for="(project, index) in projects"
           :key="index"
           v-scroll-reveal="project.delay"
-          class="group flex flex-col w-full lg:w-[calc((100%-4rem)/3)] bg-slate-900 rounded-3xl overflow-hidden shadow-xl shadow-black/30 border border-slate-800 hover:border-slate-700 transition-all duration-500 hover:-translate-y-2"
+          class="group relative"
+          :style="`--accent: ${project.accentColor}; --accent-soft: ${project.accentColor}66`"
         >
-          <div class="h-52 relative overflow-hidden bg-slate-800/50">
+          <!-- Hover glow in the project's color -->
+          <div
+            class="absolute -inset-3 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+            :style="`background: radial-gradient(circle at 50% 30%, ${project.accentColor}22, transparent 70%)`"
+          ></div>
+
+          <div
+            class="relative h-[440px] rounded-2xl overflow-hidden border border-slate-800 group-hover:border-(--accent-soft) shadow-xl shadow-black/20 group-hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-1.5 bg-slate-900"
+          >
+            <!-- Photo fills the card -->
             <img
               :src="project.image"
               :alt="project.title"
-              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              loading="lazy"
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
             />
 
+            <!-- Readability gradient (navy, not black) -->
             <div
-              class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"
+              class="absolute inset-0 bg-gradient-to-t from-[#0b1426]/95 from-10% via-[#0b1426]/50 via-45% to-[#0b1426]/10"
+            ></div>
+            <!-- Color tint on hover -->
+            <div
+              class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              :style="`background: linear-gradient(to top, ${project.accentColor}26, transparent 60%)`"
             ></div>
 
-            <div class="absolute top-6 right-6">
-              <span
-                class="px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-sm border backdrop-blur-md"
-                :class="project.statusClass"
+            <!-- Top row: icon + status -->
+            <div class="absolute top-5 inset-x-5 flex items-start justify-between">
+              <div
+                class="w-12 h-12 rounded-xl flex items-center justify-center border backdrop-blur-md bg-slate-950/50 transition-transform duration-500 group-hover:rotate-[-6deg]"
+                :style="`border-color: ${project.accentColor}50`"
               >
+                <i class="fas text-lg" :class="project.icon" :style="`color: ${project.accentColor}`"></i>
+              </div>
+              <span
+                class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider backdrop-blur-md bg-slate-950/50 border border-white/10 text-white"
+              >
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
                 {{ project.status }}
               </span>
             </div>
-          </div>
 
-          <!-- Content Area -->
-          <div class="p-8 flex-1 flex flex-col">
-            <div class="mb-4">
-              <h3
-                class="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors uppercase"
-              >
-                {{ project.title }}
-              </h3>
-              <p class="text-slate-400 leading-relaxed text-sm">
-                {{ project.description }}
-              </p>
-            </div>
-
-            <div class="mt-auto pt-6 border-t border-slate-800">
-              <div class="flex items-center justify-between mb-4">
-                <h4
-                  class="text-xs font-bold text-slate-500 uppercase tracking-wider"
+            <!-- Bottom content -->
+            <div class="absolute inset-x-0 bottom-0 p-6 lg:p-8">
+              <div class="transition-transform duration-500 ease-out group-hover:-translate-y-1">
+                <h3
+                  class="text-2xl lg:text-3xl font-bold text-white drop-shadow-lg group-hover:text-(--accent) transition-colors duration-300"
                 >
-                  {{ t("projects.technologies") }}
-                </h4>
-              </div>
+                  {{ project.title }}
+                </h3>
 
-              <div class="flex flex-wrap gap-2">
-                <span
-                  v-for="tech in project.techStack"
-                  :key="tech.name"
-                  class="px-3 py-1.5 rounded-lg text-xs font-bold border transition-transform hover:scale-105 cursor-default"
-                  :class="tech.class"
+                <!-- Description: always shown on phones, slides in on hover on larger screens -->
+                <div
+                  class="grid grid-rows-[1fr] opacity-100 mt-3 md:grid-rows-[0fr] md:opacity-0 md:mt-0 transition-all duration-500 ease-out md:group-hover:grid-rows-[1fr] md:group-hover:opacity-100 md:group-hover:mt-3"
                 >
-                  {{ tech.name }}
-                </span>
+                  <p class="overflow-hidden text-sm leading-relaxed text-slate-200">
+                    {{ project.description }}
+                  </p>
+                </div>
+
+                <!-- Tech stack -->
+                <div class="flex flex-wrap gap-2 mt-5">
+                  <span
+                    v-for="tech in project.techStack"
+                    :key="tech"
+                    class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold backdrop-blur-md bg-slate-950/50 text-slate-200 border border-white/10"
+                  >
+                    <span class="w-1.5 h-1.5 rounded-full" :style="`background: ${project.accentColor}`"></span>
+                    {{ tech }}
+                  </span>
+                </div>
               </div>
             </div>
           </div>

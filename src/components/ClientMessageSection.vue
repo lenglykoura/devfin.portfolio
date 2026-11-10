@@ -6,15 +6,18 @@ const { t } = useI18n();
 
 <template>
   <section
-    class="py-24 pt-12 bg-[#020617] relative overflow-hidden flex items-center"
+    class="py-28 pt-16 bg-[#080c16] relative overflow-hidden flex items-center"
   >
     <!-- Background Decor -->
     <div
-      class="absolute inset-0 z-0 opacity-20"
+      class="absolute inset-0 z-0 opacity-[0.07]"
       style="
-        background-image: radial-gradient(#123764 1px, transparent 1px);
+        background-image: radial-gradient(#1e293b 1px, transparent 1px);
         background-size: 30px 30px;
       "
+    ></div>
+    <div
+      class="absolute top-1/4 right-0 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[150px] pointer-events-none"
     ></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
@@ -22,30 +25,32 @@ const { t } = useI18n();
         <!-- Left Content -->
         <div class="text-left" v-scroll-reveal>
           <span
-            class="text-xs font-bold tracking-wider text-blue-100 uppercase bg-blue-500/10 border border-blue-500/20 px-4 py-1.5 rounded-full mb-4 inline-block"
+            class="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-cyan-300 uppercase bg-cyan-500/10 border border-cyan-500/20 px-5 py-2 rounded-full mb-6 backdrop-blur-sm"
           >
+            <span class="flex h-1.5 w-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
             {{ t("clientMessages.badge") }}
           </span>
           <h2
-            class="text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-6 leading-tight"
+            class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-6 leading-tight"
           >
             {{ t("clientMessages.title.line1") }}<br />
             {{ t("clientMessages.title.line2") }}
             <span
-              class="text-transparent bg-clip-text bg-gradient-to-r from-devfin-500 to-blue-400"
+              class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-purple-400"
               >{{ t("clientMessages.title.highlight") }}</span
             >
           </h2>
 
-          <p class="text-lg text-slate-400 mb-8 leading-relaxed max-w-lg">
+          <p class="text-lg md:text-xl text-slate-400 mb-10 leading-relaxed max-w-lg">
             {{ t("clientMessages.desc") }}
           </p>
 
           <a
             href="#how-it-works"
-            class="inline-block px-8 py-3 rounded-lg border border-slate-700 text-white font-medium hover:bg-slate-800 hover:border-devfin-500 transition-all duration-300"
+            class="inline-flex items-center px-8 py-3.5 rounded-xl bg-blue-600 border border-blue-500 text-white font-bold text-sm hover:bg-blue-500 shadow-lg shadow-blue-600/25 transition-all duration-300"
           >
             {{ t("clientMessages.btn") }}
+            <i class="fas fa-arrow-right ml-2 text-xs"></i>
           </a>
         </div>
 
@@ -55,10 +60,10 @@ const { t } = useI18n();
         >
           <!-- Notification 1 -->
           <div
-            class="animate-cycle-1 absolute right-0 bg-slate-900/95 backdrop-blur-md p-5 rounded-3xl shadow-2xl flex items-center gap-4 border border-slate-700/50 w-full max-w-md z-30 origin-bottom"
+            class="animate-cycle-1 absolute right-0 bg-slate-900/90 backdrop-blur-md p-5 rounded-2xl shadow-2xl shadow-black/30 flex items-center gap-4 border border-slate-800 w-full max-w-md z-30 origin-bottom"
           >
             <div
-              class="w-12 h-12 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-700 flex items-center justify-center flex-shrink-0 shadow-lg shadow-green-900/20"
+              class="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500 to-emerald-700 flex items-center justify-center flex-shrink-0 shadow-lg shadow-green-900/20"
             >
               <i class="fas fa-check-circle text-white text-xl"></i>
             </div>
@@ -79,10 +84,10 @@ const { t } = useI18n();
 
           <!-- Notification 2 -->
           <div
-            class="animate-cycle-2 absolute right-0 bg-slate-900/95 backdrop-blur-md p-5 rounded-3xl shadow-2xl flex items-center gap-4 border border-slate-700/50 w-full max-w-md z-20 origin-bottom"
+            class="animate-cycle-2 absolute right-0 bg-slate-900/90 backdrop-blur-md p-5 rounded-2xl shadow-2xl shadow-black/30 flex items-center gap-4 border border-slate-800 w-full max-w-md z-20 origin-bottom"
           >
             <div
-              class="w-12 h-12 rounded-2xl bg-gradient-to-br from-devfin-500 to-blue-600 flex items-center justify-center flex-shrink-0 shadow-lg shadow-blue-900/20"
+              class="w-12 h-12 rounded-xl bg-gradient-to-br from-devfin-500 to-blue-600 flex items-center justify-center flex-shrink-0 shadow-lg shadow-blue-900/20"
             >
               <i class="fas fa-bolt text-white text-xl"></i>
             </div>
@@ -103,10 +108,10 @@ const { t } = useI18n();
 
           <!-- Notification 3 -->
           <div
-            class="animate-cycle-3 absolute right-0 bg-slate-900/95 backdrop-blur-md p-5 rounded-3xl shadow-2xl flex items-center gap-4 border border-slate-700/50 w-full max-w-md z-10 origin-bottom"
+            class="animate-cycle-3 absolute right-0 bg-slate-900/90 backdrop-blur-md p-5 rounded-2xl shadow-2xl shadow-black/30 flex items-center gap-4 border border-slate-800 w-full max-w-md z-10 origin-bottom"
           >
             <div
-              class="w-12 h-12 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center flex-shrink-0 shadow-lg shadow-purple-900/20"
+              class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center flex-shrink-0 shadow-lg shadow-purple-900/20"
             >
               <i class="fas fa-chart-line text-white text-xl"></i>
             </div>
@@ -127,10 +132,10 @@ const { t } = useI18n();
 
           <!-- Notification 4 -->
           <div
-            class="animate-cycle-4 absolute right-0 bg-slate-900/95 backdrop-blur-md p-5 rounded-3xl shadow-2xl flex items-center gap-4 border border-slate-700/50 w-full max-w-md z-0 origin-bottom"
+            class="animate-cycle-4 absolute right-0 bg-slate-900/90 backdrop-blur-md p-5 rounded-2xl shadow-2xl shadow-black/30 flex items-center gap-4 border border-slate-800 w-full max-w-md z-0 origin-bottom"
           >
             <div
-              class="w-12 h-12 rounded-2xl bg-gradient-to-br from-orange-500 to-amber-600 flex items-center justify-center flex-shrink-0 shadow-lg shadow-orange-900/20"
+              class="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500 to-amber-600 flex items-center justify-center flex-shrink-0 shadow-lg shadow-orange-900/20"
             >
               <i class="fas fa-user-plus text-white text-xl"></i>
             </div>
