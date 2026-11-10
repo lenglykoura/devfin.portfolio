@@ -20,7 +20,7 @@ export const messages = {
             workBtn: 'See Our Work',
             serviceBtn: 'See Our Services',
             socialProof: {
-                count: '50+ Clients',
+                count: '10+ Clients',
                 status: 'Trust us'
             }
         },
