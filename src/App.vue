@@ -17,6 +17,7 @@ const dotEl = ref(null);
 const ringEl = ref(null);
 const cursorVisible = ref(false);
 const cursorHover = ref(false);
+const hasMouse = ref(false);
 let targetX = 0, targetY = 0, x = 0, y = 0;
 let rafId = null;
 
@@ -51,6 +52,7 @@ const hideCursor = () => (cursorVisible.value = false);
 onMounted(() => {
   // Mouse only: phones and tablets keep their normal behaviour
   if (!window.matchMedia("(pointer: fine)").matches) return;
+  hasMouse.value = true;
   document.documentElement.classList.add("has-ring-cursor");
   window.addEventListener("mousemove", handleMouseMove, { passive: true });
   window.addEventListener("mouseover", handleMouseOver, { passive: true });
@@ -70,6 +72,7 @@ onUnmounted(() => {
   <div class="font-sans text-slate-800 bg-[#020617] scroll-smooth relative">
     <!-- Ring cursor (mouse devices only) -->
     <div
+      v-if="hasMouse"
       class="pointer-events-none fixed inset-0 z-[60] transition-opacity duration-300"
       :class="cursorVisible ? 'opacity-100' : 'opacity-0'"
     >

@@ -27,11 +27,15 @@ app.directive('scroll-reveal', {
             }
         }
 
-        // Set initial hidden state
+        // Touch devices: reveal once, shorter and smaller, so fast scrolling isn't re-animating dozens of elements
+        const isTouch = !window.matchMedia('(pointer: fine)').matches;
+        const duration = isTouch ? 0.5 : 0.8;
+        const offset = isTouch ? 16 : 30;
+
+        // Set initial hidden state (no permanent will-change: one GPU layer per element hurts phones)
         el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = `opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) ${delay}ms, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) ${delay}ms`;
-        el.style.willChange = 'opacity, transform';
+        el.style.transform = `translateY(${offset}px)`;
+        el.style.transition = `opacity ${duration}s cubic-bezier(0.16, 1, 0.3, 1) ${delay}ms, transform ${duration}s cubic-bezier(0.16, 1, 0.3, 1) ${delay}ms`;
 
         let hasRevealed = false;
 
@@ -42,6 +46,7 @@ app.directive('scroll-reveal', {
                     el.style.opacity = '1';
                     el.style.transform = 'translateY(0)';
                     hasRevealed = true;
+                    if (isTouch) observer.unobserve(el);
                 } else if (hasRevealed) {
                     // Leaving viewport — determine scroll direction from boundingClientRect
                     const rect = entry.boundingClientRect;

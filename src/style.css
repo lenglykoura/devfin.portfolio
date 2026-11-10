@@ -10,6 +10,18 @@
 
 /* Scroll Reveal — handled via inline styles in the directive */
 
+/* Touch devices: blur filters are the main cause of janky scrolling on phone GPUs.
+   Drop frosted-glass blur and hide the large decorative glows (they're barely visible anyway). */
+@media (hover: none) {
+  [class*="backdrop-blur"] {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+  [class*="blur-[1"] {
+    display: none !important;
+  }
+}
+
 /* Ensure smooth hover transitions site-wide */
 * {
   -webkit-font-smoothing: antialiased;
