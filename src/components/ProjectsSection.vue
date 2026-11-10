@@ -11,7 +11,6 @@ const projects = computed(() => [
     description: t("projects.items.loan.desc"),
     image:
       "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800",
-    icon: "fa-hand-holding-dollar",
     accentColor: "#38bdf8",
     techStack: ["Vue.js", "Laravel", "MySQL"],
     delay: 0,
@@ -22,7 +21,6 @@ const projects = computed(() => [
     description: t("projects.items.hotel.desc"),
     image:
       "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=800",
-    icon: "fa-hotel",
     accentColor: "#c084fc",
     techStack: ["Vue.js", "Laravel", "MySQL"],
     delay: 150,
@@ -33,7 +31,6 @@ const projects = computed(() => [
     description: t("projects.items.pos.desc"),
     image:
       "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=800",
-    icon: "fa-cash-register",
     accentColor: "#2dd4bf",
     techStack: [".NET Core", "C#", "SQL Server"],
     delay: 300,
@@ -44,7 +41,6 @@ const projects = computed(() => [
     description: t("projects.items.school.desc"),
     image:
       "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=800",
-    icon: "fa-graduation-cap",
     accentColor: "#34d399",
     techStack: ["Vue.js", "Laravel", "MySQL"],
     delay: 450,
@@ -133,14 +129,8 @@ const projects = computed(() => [
               :style="`background: linear-gradient(to top, ${project.accentColor}26, transparent 60%)`"
             ></div>
 
-            <!-- Top row: icon + status -->
-            <div class="absolute top-5 inset-x-5 flex items-start justify-between">
-              <div
-                class="w-12 h-12 rounded-xl flex items-center justify-center border backdrop-blur-md bg-slate-950/50 transition-transform duration-500 group-live:rotate-[-6deg]"
-                :style="`border-color: ${project.accentColor}50`"
-              >
-                <i class="fas text-lg" :class="project.icon" :style="`color: ${project.accentColor}`"></i>
-              </div>
+            <!-- Status -->
+            <div class="absolute top-5 right-5">
               <span
                 class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider backdrop-blur-md bg-slate-950/50 border border-white/10 text-white"
               >

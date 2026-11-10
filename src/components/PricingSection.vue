@@ -106,16 +106,25 @@ const plans = computed(() => [
 
           <!-- Card -->
           <div
-            class="relative flex flex-col h-full rounded-2xl border transition-all duration-300 hover:-translate-y-1 max-md:group-live:-translate-y-1 max-md:group-live:border-slate-600 overflow-hidden"
+            class="relative flex flex-col h-full rounded-2xl border transition-all duration-300 hover:-translate-y-1 max-md:group-live:-translate-y-1 max-md:group-live:border-slate-600"
             :class="[
               plan.popular
                 ? 'bg-[#0c1629] border-blue-500/30 shadow-2xl shadow-blue-900/30 md:-translate-y-4 md:hover:-translate-y-5'
-                : 'bg-slate-900/80 border-slate-800 hover:border-slate-700 shadow-xl shadow-black/20',
+                : 'bg-slate-900/80 border-slate-800 hover:border-slate-700 shadow-xl shadow-black/20 overflow-hidden',
             ]"
           >
+            <!-- Popular badge: sits on the top edge, so this card can't clip overflow -->
+            <span
+              v-if="plan.popular"
+              class="absolute -top-3.5 left-1/2 -translate-x-1/2 z-10 inline-flex items-center gap-1.5 whitespace-nowrap bg-blue-600 text-white text-[11px] font-bold px-4 py-1.5 rounded-full border border-blue-400/50 tracking-wider uppercase shadow-lg shadow-blue-600/30"
+            >
+              <i class="fas fa-star text-[8px]"></i>
+              MOST POPULAR
+            </span>
+
             <!-- Top accent bar -->
             <div
-              class="h-[2px] w-full"
+              class="h-[2px] w-full rounded-t-2xl"
               :style="`background: linear-gradient(90deg, transparent, ${plan.accentColor}80, transparent)`"
             ></div>
 
@@ -123,18 +132,6 @@ const plans = computed(() => [
               class="p-8 lg:p-10 flex flex-col flex-1"
               :class="plan.popular ? 'md:py-12 lg:py-14' : ''"
             >
-              <!-- Popular Badge (inline) -->
-              <div
-                v-if="plan.popular"
-                class="mb-5"
-              >
-                <span
-                  class="inline-flex items-center gap-1.5 bg-blue-600/15 text-blue-400 text-[11px] font-bold px-3 py-1 rounded-full border border-blue-500/20 tracking-wider uppercase"
-                >
-                  <i class="fas fa-star text-[8px]"></i>
-                  MOST POPULAR
-                </span>
-              </div>
 
               <!-- Plan icon + name -->
               <div class="flex items-center gap-3 mb-6">
