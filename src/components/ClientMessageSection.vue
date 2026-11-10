@@ -36,7 +36,7 @@ const { t } = useI18n();
             {{ t("clientMessages.title.line1") }}<br />
             {{ t("clientMessages.title.line2") }}
             <span
-              class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-purple-400"
+              class="text-blue-500"
               >{{ t("clientMessages.title.highlight") }}</span
             >
           </h2>

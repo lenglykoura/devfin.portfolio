@@ -101,15 +101,15 @@ const toggleCard = (index) => {
           :key="index"
           v-scroll-reveal="member.delay"
           class="group relative w-full max-w-sm sm:w-72 lg:w-80"
-        >
-          <!-- Hover glow behind the card -->
-          <div
-            class="absolute -inset-3 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none bg-gradient-to-b from-blue-500/20 via-cyan-500/10 to-purple-500/20"
-          ></div>
-        <div
-          class="shine relative h-[460px] w-full rounded-2xl overflow-hidden cursor-pointer shadow-xl shadow-black/20 border border-slate-800 transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-blue-900/40 group-hover:border-blue-400/40"
           :class="{ 'is-active': activeIndex === index }"
           @click="toggleCard(index)"
+        >
+          <!-- Hover / tap glow behind the card -->
+          <div
+            class="absolute -inset-3 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 group-[.is-active]:opacity-100 transition-opacity duration-500 pointer-events-none bg-gradient-to-b from-blue-500/20 via-cyan-500/10 to-purple-500/20"
+          ></div>
+        <div
+          class="shine relative h-[460px] w-full rounded-2xl overflow-hidden cursor-pointer shadow-xl shadow-black/20 border border-slate-800 transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-blue-900/40 group-hover:border-blue-400/40 group-[.is-active]:-translate-y-2 group-[.is-active]:shadow-2xl group-[.is-active]:shadow-blue-900/40 group-[.is-active]:border-blue-400/40"
         >
           <!-- Portrait -->
           <img
@@ -210,7 +210,8 @@ const toggleCard = (index) => {
   );
   transform: translateX(-120%);
 }
-.group:hover .shine::after {
+.group:hover .shine::after,
+.group.is-active .shine::after {
   transform: translateX(120%);
   transition: transform 0.9s ease;
 }
