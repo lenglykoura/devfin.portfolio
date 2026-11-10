@@ -84,18 +84,45 @@ export const messages = {
             title: 'What We Do',
             subtitle: 'Simple technology services that help your business grow.',
             learnMore: 'Learn more',
+            includedTitle: 'What you get',
+            seePricing: 'See pricing',
+            close: 'Close',
             items: {
                 web: {
                     title: 'Website Building',
-                    desc: 'We build clean, fast websites that work well on all devices and are easy to update.'
+                    desc: 'We build clean, fast websites that work well on all devices and are easy to update.',
+                    features: [
+                        'Design that fits your brand',
+                        'Works on phone, tablet and computer',
+                        'Fast loading',
+                        'Easy to find on Google (SEO)',
+                        'Update content yourself',
+                        'Domain, hosting and SSL setup'
+                    ]
                 },
                 mobile: {
                     title: 'Mobile Apps',
-                    desc: 'We create apps for iPhone and Android that are easy to use and built for real people.'
+                    desc: 'We create apps for iPhone and Android that are easy to use and built for real people.',
+                    features: [
+                        'Apps for iPhone and Android',
+                        'Simple, easy-to-use design',
+                        'Push notifications',
+                        'Connects to your system',
+                        'Published on App Store and Google Play',
+                        'Updates and fixes after launch'
+                    ]
                 },
                 db: {
                     title: 'Data Management',
-                    desc: "We organize and protect your data so it's safe, organized, and easy to find."
+                    desc: "We organize and protect your data so it's safe, organized, and easy to find.",
+                    features: [
+                        'Database design',
+                        'Move data from Excel or old systems',
+                        'Automatic daily backups',
+                        'Control who can see what',
+                        'Reports and dashboards',
+                        'Fast data search'
+                    ]
                 }
             }
         },
@@ -109,26 +136,107 @@ export const messages = {
             title: 'Featured Projects',
             subtitle: "See examples of technical solutions we've built.",
             technologies: 'Built with',
+            viewFeatures: 'View features',
+            featuresTitle: 'What the system can do',
+            close: 'Close',
             items: {
                 loan: {
                     title: 'Loan Management System',
                     status: 'Live',
-                    desc: 'A complete dashboard for banks to manage borrowers, calculate interest automatically, and track payments.'
+                    desc: 'A complete dashboard for banks to manage borrowers, calculate interest automatically, and track payments.',
+                    groups: [
+                        {
+                            title: 'Loan Management',
+                            items: [
+                                { name: 'Customer records', detail: 'Keep history, photos and documents organized' },
+                                { name: 'Loan tracking', detail: 'See each loan status instantly (good, late, bad)' },
+                                { name: 'Repayment schedule', detail: 'Create repayment schedules automatically' },
+                                { name: 'Collections', detail: 'Record payments and track the remaining balance' },
+                                { name: 'Deposits', detail: 'Manage deposits and withdrawals easily' }
+                            ],
+                            reportsTitle: 'Key loan reports',
+                            reports: [
+                                'Loan disbursement report',
+                                'Collection report',
+                                'Loan portfolio report',
+                                'Daily loans due report',
+                                'Disbursement and collection report',
+                                'Fully repaid loans report',
+                                'Detailed performance report',
+                                'Income by credit officer report',
+                                'Daily plan report',
+                                'Other reports on request'
+                            ]
+                        },
+                        {
+                            title: 'Accounting & Finance',
+                            items: [
+                                { name: 'Income and expenses', detail: 'Record capital, liabilities and expenses' },
+                                { name: 'Automatic daily closing', detail: 'Close the books every day to prevent wrong edits' },
+                                { name: 'Cash count', detail: 'Check the actual banknotes so no money goes missing' }
+                            ],
+                            reportsTitle: 'Key accounting reports',
+                            reports: [
+                                'Balance sheet',
+                                'Profit and loss (summary by branch)',
+                                'Income report',
+                                'Expense report',
+                                'Cash flow report',
+                                'Branch cash report (banknotes)',
+                                'Overall financial summary'
+                            ]
+                        },
+                        {
+                            title: 'HR & Payroll',
+                            items: [
+                                { name: 'Staff profiles', detail: 'Manage staff data and documents' },
+                                { name: 'Attendance and leave', detail: 'Clock in/out and request leave from the phone' },
+                                { name: 'Payroll', detail: 'Calculate salaries (twice a month)' },
+                                { name: 'Incentives', detail: 'Calculate CO incentives automatically' },
+                                { name: 'Staff ID cards', detail: 'Create and print ID cards instantly' },
+                                { name: 'HR reports', detail: 'Attendance and leave' }
+                            ]
+                        }
+                    ]
                 },
                 hotel: {
                     title: 'Hotel Management System',
                     status: 'Live',
-                    desc: 'A complete hotel system with room booking, guest management, billing, and live room availability.'
+                    desc: 'A complete hotel system with room booking, guest management, billing, and live room availability.',
+                    features: [
+                        'Room booking',
+                        'Live room availability',
+                        'Guest check-in and check-out',
+                        'Billing and invoices',
+                        'Guest history',
+                        'Revenue reports'
+                    ]
                 },
                 pos: {
                     title: 'POS Management System',
                     status: 'Enterprise',
-                    desc: 'A fast Point of Sale system for retail stores. Track inventory, scan barcodes, and see live sales data.'
+                    desc: 'A fast Point of Sale system for retail stores. Track inventory, scan barcodes, and see live sales data.',
+                    features: [
+                        'Fast checkout with barcode scanning',
+                        'Inventory tracking',
+                        'Low-stock alerts',
+                        'Printed receipts',
+                        'Live sales dashboard',
+                        'Staff accounts and permissions'
+                    ]
                 },
                 school: {
                     title: 'School Management System',
                     status: 'Live',
-                    desc: 'A complete school platform for student enrollment, class scheduling, grades, attendance tracking, and parent communication.'
+                    desc: 'A complete school platform for student enrollment, class scheduling, grades, attendance tracking, and parent communication.',
+                    features: [
+                        'Student enrollment',
+                        'Class schedules',
+                        'Grades and report cards',
+                        'Attendance tracking',
+                        'Parent communication',
+                        'Teacher accounts'
+                    ]
                 }
             }
         },
@@ -355,18 +463,45 @@ export const messages = {
             title: 'យើងធ្វើអ្វី',
             subtitle: 'សេវាបច្ចេកវិទ្យាដែលជួយអាជីវកម្មរបស់អ្នក',
             learnMore: 'អានបន្ថែម',
+            includedTitle: 'អ្វីដែលអ្នកនឹងទទួលបាន',
+            seePricing: 'មើលតម្លៃ',
+            close: 'បិទ',
             items: {
                 web: {
                     title: 'គេហទំព័រ',
-                    desc: 'បង្កើតគេហទំព័រស្អាត លឿន និងងាយប្រើលើគ្រប់ឧបករណ៍។'
+                    desc: 'បង្កើតគេហទំព័រស្អាត លឿន និងងាយប្រើលើគ្រប់ឧបករណ៍។',
+                    features: [
+                        'រចនាតាមស្លាកសញ្ញា (Brand) របស់អ្នក',
+                        'ប្រើបានលើទូរស័ព្ទ ថេប្លេត និងកុំព្យូទ័រ',
+                        'បើកលឿន',
+                        'ងាយស្វែងរកលើ Google (SEO)',
+                        'កែមាតិកាដោយខ្លួនឯង',
+                        'រៀបចំ Domain, Hosting និង SSL'
+                    ]
                 },
                 mobile: {
                     title: 'កម្មវិធីទូរស័ព្ទ',
-                    desc: 'បង្កើតកម្មវិធីសម្រាប់ iOS និង Android ដែលលឿន និងងាយប្រើ។'
+                    desc: 'បង្កើតកម្មវិធីសម្រាប់ iOS និង Android ដែលលឿន និងងាយប្រើ។',
+                    features: [
+                        'កម្មវិធីសម្រាប់ iPhone និង Android',
+                        'រចនាសាមញ្ញ ងាយប្រើ',
+                        'ផ្ញើការជូនដំណឹង (Notification)',
+                        'ភ្ជាប់ជាមួយប្រព័ន្ធរបស់អ្នក',
+                        'ដាក់លើ App Store និង Google Play',
+                        'អាប់ដេត និងជួសជុលក្រោយដាក់ឱ្យប្រើ'
+                    ]
                 },
                 db: {
                     title: 'ប្រព័ន្ធទិន្នន័យ',
-                    desc: 'រៀបចំទិន្នន័យឱ្យមានសុវត្ថិភាព មានរបៀប និងងាយប្រើ។'
+                    desc: 'រៀបចំទិន្នន័យឱ្យមានសុវត្ថិភាព មានរបៀប និងងាយប្រើ។',
+                    features: [
+                        'រចនាមូលដ្ឋានទិន្នន័យ',
+                        'ផ្ទេរទិន្នន័យពី Excel ឬប្រព័ន្ធចាស់',
+                        'បម្រុងទុកទិន្នន័យស្វ័យប្រវត្តិរាល់ថ្ងៃ',
+                        'កំណត់សិទ្ធិអ្នកចូលមើលទិន្នន័យ',
+                        'របាយការណ៍ និងផ្ទាំងស្ថិតិ',
+                        'ស្វែងរកទិន្នន័យបានលឿន'
+                    ]
                 }
             }
         },
@@ -380,26 +515,107 @@ export const messages = {
             title: 'គម្រោងសំខាន់ៗ',
             subtitle: 'បង្ហាញជំនាញក្នុងការបង្កើតដំណោះស្រាយបច្ចេកទេស',
             technologies: 'បច្ចេកវិទ្យា',
+            viewFeatures: 'មើលមុខងារ',
+            featuresTitle: 'មុខងាររបស់ប្រព័ន្ធ',
+            close: 'បិទ',
             items: {
                 loan: {
                     title: 'ប្រព័ន្ធគ្រប់គ្រងប្រាក់កម្ចី',
                     status: 'កំពុងដំណើរការ',
-                    desc: 'ប្រព័ន្ធគ្រប់គ្រងប្រាក់កម្ចីសម្រាប់ធនាគារ។ គណនាការប្រាក់ស្វ័យប្រវត្តិ និងតាមដានការសងប្រាក់។'
+                    desc: 'ប្រព័ន្ធគ្រប់គ្រងប្រាក់កម្ចីសម្រាប់ធនាគារ។ គណនាការប្រាក់ស្វ័យប្រវត្តិ និងតាមដានការសងប្រាក់។',
+                    groups: [
+                        {
+                            title: 'គ្រប់គ្រងប្រាក់កម្ចី (Loan)',
+                            items: [
+                                { name: 'ព័ត៌មានអតិថិជន', detail: 'ទុកប្រវត្តិ រូបថត និងឯកសារច្បាស់លាស់' },
+                                { name: 'តាមដានកម្ចី', detail: 'ដឹងស្ថានភាពកម្ចីភ្លាមៗ (ល្អ, យឺត, ខូច)' },
+                                { name: 'តារាងសងប្រាក់', detail: 'បង្កើតតារាងសងស្វ័យប្រវត្តិ' },
+                                { name: 'ការប្រមូលប្រាក់', detail: 'កត់ត្រាការបង់ និងតាមដានបំណុលនៅសល់' },
+                                { name: 'ប្រាក់តម្កល់', detail: 'គ្រប់គ្រងការដាក់-ដកប្រាក់កក់ងាយស្រួល' }
+                            ],
+                            reportsTitle: 'របាយការណ៍កម្ចីសំខាន់ៗ',
+                            reports: [
+                                'របាយការណ៍ ផ្ដល់ប្រាក់កម្ចី',
+                                'របាយការណ៍ ការប្រមូលប្រាក់',
+                                'របាយការណ៍ ទុនឥណទាន',
+                                'របាយការណ៍ កម្ចីត្រូវទទួលប្រចាំថ្ងៃ',
+                                'របាយការណ៍ ទម្លាក់ទុន និងប្រមូល',
+                                'របាយការណ៍ កម្ចីបានប្រមូលហើយ',
+                                'របាយការណ៍ លទ្ធផលលម្អិត',
+                                'របាយការណ៍ ចំណូលតាមមន្រ្តីឥណទាន',
+                                'របាយការណ៍ ផែនការប្រចាំថ្ងៃ',
+                                'របាយការណ៍ ផ្សេងៗតាមតម្រូវការជាក់ស្តែង'
+                            ]
+                        },
+                        {
+                            title: 'គណនេយ្យ និងហិរញ្ញវត្ថុ (Accounting)',
+                            items: [
+                                { name: 'ចំណូល-ចំណាយ', detail: 'កត់ត្រាដើមទុន បំណុល និងការចំណាយ' },
+                                { name: 'បិទបញ្ជីស្វ័យប្រវត្តិ', detail: 'បិទបញ្ជីរាល់ថ្ងៃ ការពារការកែទិន្នន័យខុស' },
+                                { name: 'រាប់លុយជាក់ស្តែង', detail: 'ផ្ទៀងផ្ទាត់ចំនួនសន្លឹកលុយ មិនខ្លាចបាត់' }
+                            ],
+                            reportsTitle: 'របាយការណ៍គណនេយ្យសំខាន់ៗ',
+                            reports: [
+                                'របាយការណ៍ តុល្យការ',
+                                'របាយការណ៍ ចំណេញ-ខាត (សង្ខេបតាមសាខា)',
+                                'របាយការណ៍ ចំណូល',
+                                'របាយការណ៍ ចំណាយ',
+                                'របាយការណ៍ លំហូរសាច់ប្រាក់',
+                                'របាយការណ៍ សាច់ប្រាក់ប្រចាំសាខា (សន្លឹកលុយ)',
+                                'របាយការណ៍ សង្ខេបហិរញ្ញវត្ថុរួម'
+                            ]
+                        },
+                        {
+                            title: 'គ្រប់គ្រងបុគ្គលិក និងប្រាក់ខែ (HR & Payroll)',
+                            items: [
+                                { name: 'ប្រវត្តិរូបបុគ្គលិក', detail: 'គ្រប់គ្រងទិន្នន័យ និងឯកសារបុគ្គលិក' },
+                                { name: 'វត្តមាន និងច្បាប់', detail: 'ចុះវត្តមាន (Clock in/out) និងសុំច្បាប់តាមទូរស័ព្ទ' },
+                                { name: 'បើកប្រាក់ខែ', detail: 'គណនាប្រាក់ខែ (ពាក់កណ្ដាលខែម្ដង)' },
+                                { name: 'ប្រាក់លើកទឹកចិត្ត', detail: 'គណនា Incentive ជូន CO ស្វ័យប្រវត្តិ' },
+                                { name: 'កាតបុគ្គលិក', detail: 'បង្កើត និងបោះពុម្ពកាត (ID Card) ភ្លាមៗ' },
+                                { name: 'របាយការណ៍ HR', detail: 'វត្តមាន ច្បាប់។' }
+                            ]
+                        }
+                    ]
                 },
                 hotel: {
                     title: 'ប្រព័ន្ធគ្រប់គ្រងសណ្ឋាគារ',
                     status: 'កំពុងដំណើរការ',
-                    desc: 'ប្រព័ន្ធគ្រប់គ្រងសណ្ឋាគារ កក់បន្ទប់ គ្រប់គ្រងភ្ញៀវ គិតលុយ និងមើលស្ថិតិ។'
+                    desc: 'ប្រព័ន្ធគ្រប់គ្រងសណ្ឋាគារ កក់បន្ទប់ គ្រប់គ្រងភ្ញៀវ គិតលុយ និងមើលស្ថិតិ។',
+                    features: [
+                        'កក់បន្ទប់',
+                        'មើលបន្ទប់ទំនេរភ្លាមៗ',
+                        'Check-in និង Check-out ភ្ញៀវ',
+                        'គិតលុយ និងចេញវិក្កយបត្រ',
+                        'ប្រវត្តិភ្ញៀវ',
+                        'ស្ថិតិ និងរបាយការណ៍ចំណូល'
+                    ]
                 },
                 pos: {
                     title: 'ប្រព័ន្ធគ្រប់គ្រង POS',
                     status: 'សហគ្រាសធំ',
-                    desc: 'ម៉ាស៊ីនគិតលុយសម្រាប់ហាងលក់រាយ។ តាមដានស្តុក ស្កេនបាកូដ និងមើលស្ថិតិការលក់។'
+                    desc: 'ម៉ាស៊ីនគិតលុយសម្រាប់ហាងលក់រាយ។ តាមដានស្តុក ស្កេនបាកូដ និងមើលស្ថិតិការលក់។',
+                    features: [
+                        'គិតលុយរហ័ស ស្កេនបាកូដ',
+                        'តាមដានស្តុក',
+                        'ជូនដំណឹងពេលស្តុកជិតអស់',
+                        'បោះពុម្ពវិក្កយបត្រ',
+                        'មើលស្ថិតិការលក់ភ្លាមៗ',
+                        'គណនីបុគ្គលិក និងសិទ្ធិ'
+                    ]
                 },
                 school: {
                     title: 'ប្រព័ន្ធគ្រប់គ្រងសាលារៀន',
                     status: 'កំពុងដំណើរការ',
-                    desc: 'ប្រព័ន្ធគ្រប់គ្រងសាលារៀនពេញលេញ៖ ចុះឈ្មោះសិស្ស កាលវិភាគថ្នាក់ ពិន្ទុ តាមដានវត្តមាន និងទំនាក់ទំនងមាតាបិតា។'
+                    desc: 'ប្រព័ន្ធគ្រប់គ្រងសាលារៀនពេញលេញ៖ ចុះឈ្មោះសិស្ស កាលវិភាគថ្នាក់ ពិន្ទុ តាមដានវត្តមាន និងទំនាក់ទំនងមាតាបិតា។',
+                    features: [
+                        'ចុះឈ្មោះសិស្ស',
+                        'កាលវិភាគថ្នាក់',
+                        'ពិន្ទុ និងព្រឹត្តិបត្រ',
+                        'តាមដានវត្តមាន',
+                        'ទំនាក់ទំនងមាតាបិតា',
+                        'គណនីគ្រូបង្រៀន'
+                    ]
                 }
             }
         },
