@@ -139,12 +139,21 @@ const getImageUrl = (name) => {
               <h3 class="text-2xl font-bold text-white drop-shadow-lg">
                 {{ member.name }}
               </h3>
-              <span
-                class="mt-2 inline-flex items-center gap-2 bg-blue-600/20 text-blue-300 text-[11px] font-bold px-3 py-1 rounded-full border border-blue-500/30 tracking-wider uppercase backdrop-blur-sm"
-              >
-                <span class="h-1.5 w-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
-                {{ member.role }}
-              </span>
+              <!-- Roles are comma-separated: first one is the badge, the rest follow as plain text -->
+              <div class="mt-2.5 flex flex-wrap items-center gap-x-2.5 gap-y-1.5">
+                <span
+                  class="inline-flex items-center gap-1.5 bg-blue-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-full tracking-wider uppercase shadow-md shadow-blue-900/40"
+                >
+                  <span class="h-1.5 w-1.5 rounded-full bg-cyan-300 animate-pulse"></span>
+                  {{ member.role.split(",")[0].trim() }}
+                </span>
+                <span
+                  v-if="member.role.includes(',')"
+                  class="text-[10px] font-bold tracking-wider uppercase text-blue-100 drop-shadow"
+                >
+                  {{ member.role.split(",").slice(1).map((r) => r.trim()).join(" · ") }}
+                </span>
+              </div>
 
               <!-- Description: revealed on hover / tap -->
               <div

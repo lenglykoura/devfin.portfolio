@@ -139,43 +139,43 @@ export const messages = {
             getStarted: 'Get Started',
             plans: {
                 standard: {
-                    name: 'Basic',
-                    price: '$15',
-                    period: '/ month',
-                    desc: 'Key features for freelancers and new businesses.',
+                    name: 'Website',
+                    price: '$200',
+                    period: 'starting from',
+                    desc: 'A clean, professional website to get your business online.',
                     features: [
-                        'Mobile-friendly Design',
-                        'Basic SEO Setup',
-                        'Standard Support',
-                        'Easy Content Updates'
+                        'Works on phone and computer',
+                        'Easy to find on Google',
+                        'Update text and photos yourself',
+                        'Help whenever you need it'
                     ]
                 },
                 sme: {
-                    name: 'Growing Business',
+                    name: 'Website + System',
                     price: '$800',
                     period: 'starting from',
-                    desc: 'Complete solutions for businesses that are growing.',
+                    desc: 'A website plus a system to run your business: sales, stock or customers.',
                     features: [
-                        'Full Website & Backend',
-                        'Content Manager',
-                        'API Connection',
-                        'Fast Support',
-                        'Speed Improvements'
+                        'Website + management system',
+                        'Admin dashboard for your team',
+                        'Connect to payments and apps you use',
+                        'Fast and smooth to use',
+                        'Priority support'
                     ]
                 },
                 enterprise: {
-                    name: 'Large Company',
+                    name: 'Custom System',
                     price: 'Custom',
                     period: 'contact us',
-                    desc: 'Custom setup and dedicated team for big organizations.',
+                    desc: 'A system built around how your company works, with a team that looks after it.',
                     features: [
-                        'Custom System Design',
-                        'Split Services',
-                        'High-Level Security',
-                        'Dedicated Manager',
-                        'Daily Data Backup',
-                        'Private Server',
-                        '24/7 Support'
+                        'Built fully to your needs',
+                        'Handles many users at once',
+                        'Strong security',
+                        'Your own project manager',
+                        'Daily data backup',
+                        'Your own private server',
+                        '24/7 support'
                     ]
                 }
             }
@@ -241,8 +241,8 @@ export const messages = {
             members: {
                 lykoura: {
                     name: 'Leng Lykoura',
-                    role: 'Lead Developer',
-                    desc: 'Full-stack web developer skilled in Vue and Laravel & ASP.NET.'
+                    role: 'Founder, DevOps, Web Developer',
+                    desc: 'Founder of Devfin. Full-stack developer (Vue, Laravel, ASP.NET) who also runs our servers and deployments.'
                 },
                 tela: {
                     name: 'Teang Tela',
@@ -251,7 +251,7 @@ export const messages = {
                 },
                 theang: {
                     name: 'Thea Chantheang',
-                    role: 'Web Developer',
+                    role: 'Co-Founder, Web Developer',
                     desc: 'Full-stack web developer skilled in Vue and Laravel.'
                 },
             }
@@ -284,14 +284,14 @@ export const messages = {
             badge: 'ទទួលអតិថិជនថ្មី',
             welcome: 'ស្វាគមន៍មកកាន់',
             slogan: {
-                part1: 'បច្ចេកវិទ្យាឆ្លាត',
-                part2: 'ដំណោះស្រាយពិត'
+                part1: 'ប្រព័ន្ធងាយប្រើ',
+                part2: 'លទ្ធផលពិតប្រាកដ'
             },
-            desc: 'យើងជួយអាជីវកម្មប្រើបច្ចេកវិទ្យាឱ្យបានល្អ។ បង្កើតគេហទំព័រ កម្មវិធី និងប្រព័ន្ធដែលងាយប្រើ មានសុវត្ថិភាព និងជួយឱ្យអាជីវកម្មរបស់អ្នករីកចម្រើន។',
+            desc: 'យើងបង្កើតគេហទំព័រ កម្មវិធីទូរស័ព្ទ និងប្រព័ន្ធគ្រប់គ្រង សម្រាប់អាជីវកម្មរបស់អ្នក។ ប្រើងាយ មានសុវត្ថិភាព និងជួយឱ្យការងាររបស់អ្នកលឿន និងរីកចម្រើន។',
             workBtn: 'មើលការងារ',
             serviceBtn: 'មើលសេវា',
             socialProof: {
-                count: 'អតិថិជន ៥០+',
+                count: 'អតិថិជន ១០+',
                 status: 'ជឿទុកចិត្តយើង'
             }
         },
@@ -410,43 +410,43 @@ export const messages = {
             getStarted: 'ចាប់ផ្តើម',
             plans: {
                 standard: {
-                    name: 'ធម្មតា',
-                    price: '$15',
-                    period: '/ ខែ',
-                    desc: 'សម្រាប់អ្នកចាប់ផ្តើមអាជីវកម្ម',
+                    name: 'គេហទំព័រ',
+                    price: '$200',
+                    period: 'ចាប់ផ្តើមពី',
+                    desc: 'គេហទំព័រស្អាត និងទំនើប ដើម្បីឱ្យអាជីវកម្មរបស់អ្នកមានវត្តមានលើអ៊ីនធឺណិត។',
                     features: [
-                        'រចនាគេហទំព័រ',
-                        'SEO មូលដ្ឋាន',
-                        'ជំនួយធម្មតា',
-                        'គ្រប់គ្រងមាតិកា'
+                        'ប្រើបានទាំងទូរស័ព្ទ និងកុំព្យូទ័រ',
+                        'ងាយស្វែងរកលើ Google',
+                        'កែអត្ថបទ និងរូបភាពដោយខ្លួនឯង',
+                        'មានក្រុមការងារចាំជួយ (Support)'
                     ]
                 },
                 sme: {
-                    name: 'អាជីវកម្មកណ្តាល',
+                    name: 'គេហទំព័រ + ប្រព័ន្ធ',
                     price: '$800',
                     period: 'ចាប់ផ្តើមពី',
-                    desc: 'សម្រាប់អាជីវកម្មដែលកំពុងរីកចម្រើន',
+                    desc: 'គេហទំព័រ និងប្រព័ន្ធគ្រប់គ្រងអាជីវកម្ម ដូចជា ការលក់ ស្តុក ឬអតិថិជន។',
                     features: [
-                        'Full Stack Development',
-                        'ភ្ជាប់ប្រព័ន្ធគ្រប់គ្រង',
-                        'បង្កើត API',
-                        'ជំនួយរហ័ស',
-                        'ធ្វើឱ្យប្រព័ន្ធលឿន'
+                        'គេហទំព័រ + ប្រព័ន្ធគ្រប់គ្រង',
+                        'ផ្ទាំងគ្រប់គ្រងសម្រាប់ក្រុមការងារ',
+                        'ភ្ជាប់ការបង់ប្រាក់ និងកម្មវិធីដែលអ្នកប្រើ',
+                        'ប្រើលឿន និងរលូន',
+                        'មានក្រុមការងារចាំជួយរហ័ស (Support)'
                     ]
                 },
                 enterprise: {
-                    name: 'សហគ្រាសធំ',
+                    name: 'ប្រព័ន្ធតាមតម្រូវការ',
                     price: 'តម្លៃតាមគម្រោង',
                     period: 'សូមទាក់ទង',
-                    desc: 'សម្រាប់ក្រុមហ៊ុនធំ ដែលត្រូវការសេវាពិសេស',
+                    desc: 'ប្រព័ន្ធដែលបង្កើតតាមរបៀបធ្វើការរបស់ក្រុមហ៊ុនអ្នក ជាមួយក្រុមការងារមើលថែជានិច្ច។',
                     features: [
-                        'រចនាប្រព័ន្ធតាមតម្រូវការ',
-                        'Microservices',
+                        'បង្កើតតាមតម្រូវការរបស់អ្នកទាំងស្រុង',
+                        'ទ្រទ្រង់អ្នកប្រើច្រើនក្នុងពេលតែមួយ',
                         'សុវត្ថិភាពខ្ពស់',
-                        'មានអ្នកគ្រប់គ្រងផ្ទាល់',
+                        'មានអ្នកទទួលបន្ទុកគម្រោងផ្ទាល់',
                         'បម្រុងទុកទិន្នន័យរាល់ថ្ងៃ',
-                        'ម៉ាស៊ីនមេផ្ទាល់ខ្លួន',
-                        'ជំនួយ ២៤/៧'
+                        'ម៉ាស៊ីនមេ (Server) ផ្ទាល់ខ្លួន',
+                        'មានក្រុមការងារចាំជួយ ២៤/៧ (Support)'
                     ]
                 }
             }
@@ -512,8 +512,8 @@ export const messages = {
             members: {
                 lykoura: {
                     name: 'ឡេង លីគូរ៉ា',
-                    role: 'Lead Developer',
-                    desc: 'អ្នកសរសេរកូដ Full-stack ជំនាញ Vue និង Laravel & ASP.NET'
+                    role: 'Founder, DevOps, Web Developer',
+                    desc: 'ស្ថាបនិក Devfin។ អ្នកសរសេរកូដ Full-stack (Vue, Laravel, ASP.NET) និងគ្រប់គ្រង Server និងការដាក់ប្រព័ន្ធឱ្យដំណើរការ។'
                 },
                 tela: {
                     name: 'ទាង តេលា',
@@ -522,7 +522,7 @@ export const messages = {
                 },
                 theang: {
                     name: 'ធា ចាន់ធៀង',
-                    role: 'Web Developer',
+                    role: 'Co-Founder, Web Developer',
                     desc: 'អ្នកសរសេរកូដ Full-stack ជំនាញ Vue និង Laravel'
                 },
             }
