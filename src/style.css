@@ -20,6 +20,116 @@
   transform: translateY(-2px);
 }
 
+/* ============================================================
+   SCROLLBAR STYLING
+   Scoped to real scroll containers: the page and the popups.
+   Never target `div` broadly — that promotes every element to its
+   own iOS compositing layer and causes rendering bugs.
+   ============================================================ */
+html,
+.popup-panel {
+  /* Thumb colour (slate-400), reused below at different strengths */
+  --sb-rgb: 148 163 184;
+
+  /* 10px gutter, but the thumb is drawn as a 6px pill floating in the
+     middle (transparent border + padding-box clip). On hover the border
+     shrinks so the pill grows to 8px — easier to grab, still slim at rest. */
+  &::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  &::-webkit-scrollbar-track,
+  &::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    min-height: 32px;
+    min-width: 32px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    background-clip: padding-box;
+    background-color: rgb(var(--sb-rgb) / 0.25);
+  }
+
+  &:hover::-webkit-scrollbar-thumb {
+    background-color: rgb(var(--sb-rgb) / 0.4);
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    border-width: 1px;
+    background-color: rgb(var(--sb-rgb) / 0.6);
+  }
+
+  /* Arrow buttons — rounded chevrons (Chrome/Edge/Safari only; Firefox has
+     no API for them). Images can't read CSS variables, so colours are fixed:
+     #64748b at rest, #e2e8f0 on hover (light, to show on the dark site). */
+  &::-webkit-scrollbar-button:single-button {
+    display: block;
+    border-radius: 4px;
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 8px 8px;
+  }
+
+  &::-webkit-scrollbar-button:single-button:vertical {
+    height: 14px;
+  }
+
+  &::-webkit-scrollbar-button:single-button:horizontal {
+    width: 14px;
+  }
+
+  &::-webkit-scrollbar-button:single-button:vertical:decrement {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath d='M1.5 5.5L4 3l2.5 2.5' fill='none' stroke='%2364748b' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  }
+
+  &::-webkit-scrollbar-button:single-button:vertical:increment {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath d='M1.5 2.5L4 5l2.5-2.5' fill='none' stroke='%2364748b' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  }
+
+  &::-webkit-scrollbar-button:single-button:horizontal:decrement {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath d='M5.5 1.5L3 4l2.5 2.5' fill='none' stroke='%2364748b' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  }
+
+  &::-webkit-scrollbar-button:single-button:horizontal:increment {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath d='M2.5 1.5L5 4 2.5 6.5' fill='none' stroke='%2364748b' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  }
+
+  &::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath d='M1.5 5.5L4 3l2.5 2.5' fill='none' stroke='%23e2e8f0' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  }
+
+  &::-webkit-scrollbar-button:single-button:vertical:increment:hover {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath d='M1.5 2.5L4 5l2.5-2.5' fill='none' stroke='%23e2e8f0' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  }
+
+  &::-webkit-scrollbar-button:single-button:horizontal:decrement:hover {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath d='M5.5 1.5L3 4l2.5 2.5' fill='none' stroke='%23e2e8f0' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  }
+
+  &::-webkit-scrollbar-button:single-button:horizontal:increment:hover {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath d='M2.5 1.5L5 4 2.5 6.5' fill='none' stroke='%23e2e8f0' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  }
+
+  &::-webkit-scrollbar-button:single-button:hover {
+    background-color: rgb(var(--sb-rgb) / 0.1);
+  }
+
+  &::-webkit-scrollbar-button:single-button:active {
+    background-color: rgb(var(--sb-rgb) / 0.2);
+  }
+
+  /* Firefox only. In Chrome 121+ `scrollbar-color` disables every
+     ::-webkit-scrollbar rule, so keep it behind a Firefox-only check. */
+  @supports (-moz-appearance: none) {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(var(--sb-rgb) / 0.3) transparent;
+  }
+}
+
 /* Scroll Reveal — handled via inline styles in the directive */
 
 /* Touch devices: blur filters are the main cause of janky scrolling on phone GPUs.
@@ -39,3 +149,4 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
